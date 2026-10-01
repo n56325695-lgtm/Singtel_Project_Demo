@@ -1,0 +1,45 @@
+python -m app.main
+
+
+To stop the docker engine -->>> need to run the command --->>>
+"docker compose down"
+
+
+
+
+
+
+
+
+
+
+flow-execution:-
+
+1. need to make the web chat ui attractive 
+2.text extraction from the image , handle the non-txt image 
+
+
+
+extract.py  →  (manual prune)  →  vision_enrich.py  →  ingest.py
+
+
+<!-- For run the code part of this project  -->
+
+python -m app.extract          # Phase 1 — no vision, no Qdrant
+# manually delete junk images from documents/page_images/
+
+python -m app.ingest           # Phase 3 — only now touches Qdrant
+
+
+uvicorn Dashboard.api:app --reload  ---> running command for web-ui .
+
+
+
+
+
+
+return text and image --> fig description -->it is actual part of expected chunks 
+
+prompt should include an instruction to return fig description  for relevent question --> try 
+
+embedded markdown link --> instead of fig desciption need to try this approch as well.

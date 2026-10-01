@@ -1,0 +1,884 @@
+{
+  "962893a9-af92-4b7f-9d8f-63b03b91b07c": {
+    "text": " ",
+    "source": "singtel_document.pdf",
+    "page_num": 1,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-page001_img11.png",
+    "caption": null
+  },
+  "22674abf-84ef-43d1-be71-4adca6906053": {
+    "text": "Figure: Dashboard - Overview 1.0 Dashboard\nFigure: Dashboard - Overview",
+    "source": "singtel_document.pdf",
+    "page_num": 6,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Dashboard_-_Overview.png",
+    "caption": "Figure: Dashboard - Overview"
+  },
+  "7e80c0d1-021c-4521-ae9f-3d34d9118dc7": {
+    "text": "Figure: Dashboard – Infrastructure Resources When users log in, they can find the side menu expanded, offering key categories like Compute, MCP,\nConnect, Network, Object Storage, Storage, Services, and Admin.\nIn the Dashboard Overview section, users can easily check their Instance Policy to see the\nusage/capacity of the existing virtual machines, including vCPU, Memory, volume storage, and\nElastic IPs, all represented in percentages. users can also access Instance API information, such as the\nURL (which can be copied), status (e.g., running), and API token (also copyable) at a glance.\nIn the Recent Transactions section, a table displaying columns like ID, Type, Resource Type, Resource\nID, Completed (timestamp), and State will be seen.\nFigure: Dashboard – Infrastructure Resources\nWithin the “Infrastructure Resources” section, there are hyperlinks for these categories:\nNodes\n•\nVolumes\n•\nSubnets\n•\nElastic Ips\n•\nSSH Keys\n•\nBackups\n•\nRoutes\n•\nPeering Connect\n•\nNode Connect\n•\nSnapshots\n•",
+    "source": "singtel_document.pdf",
+    "page_num": 7,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Dashboard_Infrastructure_Resources.png",
+    "caption": "Figure: Dashboard – Infrastructure Resources"
+  },
+  "66c977d8-967e-41ff-9fd2-97c5e1ac7d24": {
+    "text": "Figure: Dashboard – Quick Actions & Quick Search Network Policies\n•\nExpress Connect\n•\nEdge Connect\n•\nSchedulers\n•\nNAT Gateway\n•\nCloud Connect\n•\nClicking on any of these tabs, will route the user to its respective page.\nFigure: Dashboard – Quick Actions & Quick Search",
+    "source": "singtel_document.pdf",
+    "page_num": 8,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Dashboard_Quick_Actions_Quick_Search.png",
+    "caption": "Figure: Dashboard – Quick Actions & Quick Search"
+  },
+  "1e6746ba-a9dc-4f15-8762-c50567a610ed": {
+    "text": "Figure: Dashboard – Quick Actions Figure: Dashboard – Quick Actions\nUsers have the option to utilize shortcuts within the \"Quick Actions\" section. By selecting from the",
+    "source": "singtel_document.pdf",
+    "page_num": 9,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Dashboard_Quick_Actions.png",
+    "caption": "Figure: Dashboard – Quick Actions"
+  },
+  "77ed4e2f-5591-4d59-b14f-5e91448586d5": {
+    "text": "Figure: Dashboard – Quick Search Users have the option to utilize shortcuts within the \"Quick Actions\" section. By selecting from the\nvarious types of actions or processes such as creating a route, a node, a bucket, etc., from the\ndropdown menu, users will be directed to the initial step of the selected process upon clicking.\nFigure: Dashboard – Quick Search\nUsers have the option to utilize the quick search bar within the \"Quick Search\" section. Firstly, by\nselecting the resource type and providing the resource ID or name in the field beside it.\n9 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 9,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Dashboard_Quick_Search.png",
+    "caption": "Figure: Dashboard – Quick Search"
+  },
+  "3373960f-3c19-4343-aede-853ab901e5cd": {
+    "text": "Figure: Viewing Notifications – Method 1 2.0 Notifications\nFigure: Viewing Notifications – Method 1",
+    "source": "singtel_document.pdf",
+    "page_num": 10,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Viewing_Notifications_Method_1.png",
+    "caption": "Figure: Viewing Notifications – Method 1"
+  },
+  "91adc06a-ed07-40e5-886b-adb776032827": {
+    "text": "Figure: Notifications – Dashboard Users can navigate to the notifications section by expanding the side menu and clicking onto the\n“Notifications” label.\nFigure: Notifications – Dashboard\nIn the “Notifications” page, users can opt to sort the records based on severity, title, message, code,\nor the “Received At” timestamp.\n10 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 10,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Notifications_Dashboard.png",
+    "caption": "Figure: Notifications – Dashboard"
+  },
+  "25ba4549-5280-4638-b1af-f2ac4ccc342e": {
+    "text": "Figure: Notifications – Search/Severity Figure: Notifications – Search/Severity",
+    "source": "singtel_document.pdf",
+    "page_num": 11,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Notifications_Search_Severity.png",
+    "caption": "Figure: Notifications – Search/Severity"
+  },
+  "529bdfbe-d91e-4f18-948e-30a2fb021a78": {
+    "text": "Figure: Notifications - Searching using values. Figure: Notifications - Searching using values.",
+    "source": "singtel_document.pdf",
+    "page_num": 11,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Notifications_-_Searching_using_values.png",
+    "caption": "Figure: Notifications - Searching using values."
+  },
+  "2e1f2bf1-596f-4b0b-a8f9-004fbf349cf6": {
+    "text": "Figure: Notifications – Searching based on Severity. Figure: Notifications – Searching based on Severity.\nUsers can also toggle between these filters:",
+    "source": "singtel_document.pdf",
+    "page_num": 12,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Notifications_Searching_based_on_Severity.png",
+    "caption": "Figure: Notifications – Searching based on Severity."
+  },
+  "51ac454e-0581-4655-8bb3-519878ad392f": {
+    "text": "Figure: Notifications – Selecting a date range. 1. Search: This will allow user to provide values and then the search will scan through records\ncontaining those values.\n2. Severity: Selecting a Low, Medium, or High value.\nFigure: Notifications – Selecting a date range.\nUsers can opt to select a date range from the available date picker and apply the filter on the list of\nnotifications.\n12 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 12,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Notifications_Selecting_a_date_range.png",
+    "caption": "Figure: Notifications – Selecting a date range."
+  },
+  "b4fb9a73-47c1-4685-8700-c128c1ddcee7": {
+    "text": "Figure: MEC Manager – Policies 3.0 Admin Controls\n3.0.1 Policy Management\nFigure: MEC Manager – Policies\nTo start navigating, click on the “Admin” tab and select “Policies” to land on this page.\n13 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 13,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_Policies.png",
+    "caption": "Figure: MEC Manager – Policies"
+  },
+  "b672b879-df9d-4070-8315-be6dbdb9ff17": {
+    "text": "Figure: Notifications Figure: Notifications\nAlternatively, users can have a quick glance on the latest notifications by clicking the bell icon on the\ntop right of the browser beside the profile menu.",
+    "source": "singtel_document.pdf",
+    "page_num": 13,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Notifications.png",
+    "caption": "Figure: Notifications"
+  },
+  "dd94330e-dab4-4b70-bf2b-05f9b498a8bb": {
+    "text": "Figure: MEC Manager – Policies Click on the desired policy to view more details.\nFigure: MEC Manager – Policies\nWhen you click on the policy, you can see an overview of the policy, the type of resource being used,",
+    "source": "singtel_document.pdf",
+    "page_num": 14,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_Policies_1.png",
+    "caption": "Figure: MEC Manager – Policies"
+  },
+  "6ab8a0ec-3456-4a95-9415-df82642b9399": {
+    "text": "Figure: MEC Manager – Policy Request History When you click on the policy, you can see an overview of the policy, the type of resource being used,\ncurrent usage, current limit, total limit, and status. Additionally, there is a request history section\ndisplaying the request ID, policy details, requester information, submission time, update time, and\nstatus.\nFigure: MEC Manager – Policy Request History\n14 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 14,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_Policy_Request_History.png",
+    "caption": "Figure: MEC Manager – Policy Request History"
+  },
+  "0588ca36-33f8-49dc-b13f-815e55dda6a1": {
+    "text": "Figure: MEC Manager – Policy Limit Request For a more detailed view of a specific policy request, navigate to the actions tab under the\ncorresponding record in the request history view. Click on \"View Detail,\" and a pop-up display will\nappear on the same screen, providing information about that particular request.\nFigure: MEC Manager – Policy Limit Request\nWithin this pop-up, you will find key details of the request, including information such as the request\nID, requester's details, status updates, current and new limits for various resources like node, vCPU,\nmemory, block storage, and elastic IP. Additionally, timestamps for when the request was submitted\nand updated will be available, providing a complete overview of the request's evolution and specifics.",
+    "source": "singtel_document.pdf",
+    "page_num": 15,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_Policy_Limit_Request.png",
+    "caption": "Figure: MEC Manager – Policy Limit Request"
+  },
+  "2fd650e2-1ac0-4fdf-bc42-aa8e0ba8da8b": {
+    "text": "Figure: Resource Groups – Overview Figure: MEC Manager – Resource Groups\nTo access the resource groups overview, go to the \"Admin\" tab, then select the \"Resource Groups\"\ntab.\nFigure: Resource Groups – Overview\nWithin this interface, you'll find the list of resource groups along with details like name, provider, and\naction options such as editing or viewing the specific group details.\n16 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 16,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Resource_Groups_Overview.png",
+    "caption": "Figure: Resource Groups – Overview"
+  },
+  "620ea9de-9a77-421a-88f7-eb07d687dcfc": {
+    "text": "Figure: Resource Groups – Creating a Resource Group Figure: Resource Groups – Creating a Resource Group\nYou can initiate the creation of a resource group by clicking the \"Create\" button located on the main\noverview page of resource groups.\nFigure: Resource Groups – Creating a Resource Group\nYou can start by providing your resource group name and then subsequently assign resources like\nnetwork information (subnets, IPs, etc.) by editing the resource group from the main page.\n17 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 17,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Resource_Groups_Creating_a_Resource_Group.png",
+    "caption": "Figure: Resource Groups – Creating a Resource Group"
+  },
+  "1beac08f-d5df-4b9c-b947-5e22b19ccad0": {
+    "text": "Figure: Admin – Roles 3.0.3 User Count and Status for Assigned Roles\nFigure: Admin – Roles",
+    "source": "singtel_document.pdf",
+    "page_num": 18,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Admin_Roles.png",
+    "caption": "Figure: Admin – Roles"
+  },
+  "45bdc9e6-3a62-4354-99a9-803f7b00f0d9": {
+    "text": "Figure: Admin – Roles Overview To get started, select the \"Admin\" tab, and then choose \"Roles.\"\nFigure: Admin – Roles Overview\nWithin this view, you'll find a comprehensive list of existing roles, displaying their respective names,\ntotal member counts, and the status of the roles (active/disabled).",
+    "source": "singtel_document.pdf",
+    "page_num": 18,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Admin_Roles_Overview.png",
+    "caption": "Figure: Admin – Roles Overview"
+  },
+  "15e0fc43-3348-40f4-b7a7-60fa581f965a": {
+    "text": "Figure: Admin – Roles – Preferences Figure: Admin – Roles – Preferences\nClicking on the settings icon within this dashboard will also allow the users to select the page size,",
+    "source": "singtel_document.pdf",
+    "page_num": 19,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Admin_Roles_Preferences.png",
+    "caption": "Figure: Admin – Roles – Preferences"
+  },
+  "01f95f1e-fb77-4acf-b2a1-836bc4b3a056": {
+    "text": "Figure: Admin – Creating a User and filters.\n3.0.4 Creating a User\nDo note that this action is only enabled for administrators.\nFigure: Admin – Creating a User\nTo begin the process of creating a user for MEC Manager, on the landing dashboard of the “Users”\nmodule, proceed to click on the “Create” button.\n19 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 19,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Admin_Creating_a_User.png",
+    "caption": "Figure: Admin – Creating a User"
+  },
+  "403af9f0-feb2-48a4-af14-2abb91ef8238": {
+    "text": "Figure: Admin – Steps to creating a User. Figure: Admin – Steps to creating a User.\nOnce the user has landed on this view, proceed to follow the steps as listed below:\nStep 1: Enter your username, which can be used as a backup for the email address you were given\nupon logging in.\nStep 2: To access this user account, provide its email address.\nSteps 3 and 4: Give the user's first and last name.\nStep 5: Create a temporary password. The user will need to update it the first time they log in.\nStep 6: Verify the temporary password.\nStep 7: Based on the options provided from the dropdown menu, select the user's role.",
+    "source": "singtel_document.pdf",
+    "page_num": 20,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Admin_Steps_to_creating_a_User.png",
+    "caption": "Figure: Admin – Steps to creating a User."
+  },
+  "331f426e-a965-4df9-8158-d0750451d6e0": {
+    "text": "Figure: Admin – Users 3.0.5 Viewing User Details\nFigure: Admin – Users",
+    "source": "singtel_document.pdf",
+    "page_num": 21,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Admin_Users.png",
+    "caption": "Figure: Admin – Users"
+  },
+  "ab311fa4-83ea-4224-92b2-447984e59e97": {
+    "text": "Figure: Admin – Users Dashboard To get started, select the \"Admin\" tab, and then choose \"Users.\"\nFigure: Admin – Users Dashboard\nIn the \"Users\" section of the admin panel, a user-friendly dashboard provides a table view featuring\nkey details. This table includes the following columns:\nUsername: Displays the user's name.\n•\nEmail: Shows the user's email address.\n•\nRole: Indicates the role/roles assigned to the user.\n•\nLast Login: Indicates a timestamp of the most recent login.\n•\nState: Reflects the current status of the user account.\n•\nThis streamlined presentation enables administrators to efficiently manage user information,\nfacilitating quick access to essential details and actions.\n21 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 21,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Admin_Users_Dashboard.png",
+    "caption": "Figure: Admin – Users Dashboard"
+  },
+  "49eac762-7345-49e5-9f41-2a50c26cb25a": {
+    "text": "Figure: Users – View details Figure: Users – View details",
+    "source": "singtel_document.pdf",
+    "page_num": 22,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Users_View_details.png",
+    "caption": "Figure: Users – View details"
+  },
+  "bc5fe880-21b3-46e2-9847-f5e25c219a0e": {
+    "text": "Figure: Admin – Users - Preferences The following information will be visible: user ID, username, creation date, email address, state, and\nthe types of roles associated with the user.\nFigure: Admin – Users - Preferences\nClicking on the settings icon within this dashboard will also allow the users to select the page size,\nand filters.\n22 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 22,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Admin_Users_-_Preferences.png",
+    "caption": "Figure: Admin – Users - Preferences"
+  },
+  "8e2159e5-64d5-45f7-8343-83428e213e99": {
+    "text": "Figure: MEC Manager – Change Password 3.1.0 Change of Passwords\nFigure: MEC Manager – Change Password",
+    "source": "singtel_document.pdf",
+    "page_num": 23,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_Change_Password.png",
+    "caption": "Figure: MEC Manager – Change Password"
+  },
+  "30aae488-631d-431d-9eca-f914123e8935": {
+    "text": "Figure: Change Password – Step 1 to 4 At the top right of the browser, click on your profile icon and then select “Change Password.”\nFigure: Change Password – Step 1 to 4\nStep 1: Begin by providing your existing password.\nStep 2: Select a new password that is strong and unique. A strong password typically includes a mix of\nuppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable\ninformation such as names, birthdays, or frequently used words. Creating a complex password\nenhances the security of your account.\nStep 3: Re-enter the newly chosen password exactly as you did in Step 2. This confirmation ensures\nthat you have correctly inputted your new password.\nStep 4: Once you have confirmed your new password, look for a button labelled \"Confirm”. Click on\nthis button to apply the changes. By doing so, you have updated your password securely.",
+    "source": "singtel_document.pdf",
+    "page_num": 23,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Change_Password_Step_1_to_4.png",
+    "caption": "Figure: Change Password – Step 1 to 4"
+  },
+  "686c1e83-67cf-43e2-ad91-a840636ca8d6": {
+    "text": "Figure: MEC Manager – API Token 4.0 Generating an API Token\nFigure: MEC Manager – API Token",
+    "source": "singtel_document.pdf",
+    "page_num": 24,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_API_Token.png",
+    "caption": "Figure: MEC Manager – API Token"
+  },
+  "ffcad126-46ad-446c-a090-2fe9b1da96f8": {
+    "text": "Figure: MEC Manager – Regenerate API Token At the top right of the browser, click on your profile icon and then select “API Token.”\nFigure: MEC Manager – Regenerate API Token\nUpon landing on the “API Token” page, you may click on “Re-Generate” to regenerate the token.",
+    "source": "singtel_document.pdf",
+    "page_num": 24,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_Regenerate_API_Token.png",
+    "caption": "Figure: MEC Manager – Regenerate API Token"
+  },
+  "d1d95746-4ca5-4b79-add0-5eb2a715f23c": {
+    "text": "Figure: MEC Manager – Transaction Logs 5.0 Understanding Transactions Logs\nFigure: MEC Manager – Transaction Logs\nTransaction ID: Each operation or transaction is assigned a unique ID. This ID helps you keep\n•\ntrack of specific activities, making it easier to reference and understand the context of each\noperation.\nType: type of transaction, shown below\n•\nUser: username of user who initiated the transaction\n•\nResource Type: Type of resources, shown below\n•\nResource Name: Name of resource if available\n•\nResource ID: the UUID of the resource\n•\nZone ID: Zone of the resource (may be null)\n•\nRegion ID: Region of the resource (may be null)\n•\nSKU ID: The SKU ID of the resource or produce\n•\nState: State of the transaction, available states are Complete, Failed, or In Progress\n•\nStarted: Date and time that the transaction started\n•",
+    "source": "singtel_document.pdf",
+    "page_num": 25,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_Transaction_Logs.png",
+    "caption": "Figure: MEC Manager – Transaction Logs"
+  },
+  "e042bcc4-c74d-4ef4-8eac-a6aacb73a166": {
+    "text": "Figure: MEC Manager – View Detail Types of Resource Types:\nSubnet, Node, Storage Block, Storage Snapshot, Storage Backup, Network Interface, Elastic IP,\nNetwork Route, NAT Gateway, Network Policy, Load Balancer, Node Connect, MCC (Multi-cloud\nContainer Cluster), MCC Node, MCPV (Multi-cloud Container Persistent Volume), MCR (Multi-cloud\nContainer Registry), MCR Account, MCC Connect, Cross Connect, Edge Connect, Peering Connect,\nExpress Connect, Cloud Connect, Connect Policy, Application Purchase.\nIn summary, this dashboard provides you with a clear overview of all the transactions happening\nwithin the cloud infrastructure. You can see what kind of operations are taking place, which resources\nare involved, where they are located, and whether these operations were successful or not. This\ndetailed information is crucial for managing and troubleshooting activities in a cloud environment\neffectively.\nClick on the “Services” tab and select “Transaction Logs” to begin.\nFigure: MEC Manager – View Detail\nTo view more information about a specific transaction, click on the “Actions” tab and click “View\nDetail.”\n26 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 26,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_View_Detail.png",
+    "caption": "Figure: MEC Manager – View Detail"
+  },
+  "33b6f1e0-e977-44fa-9302-e45c4aa8d7c1": {
+    "text": "Figure: MEC Manager – Transaction Figure: MEC Manager – Transaction\nWhen you click on \"View Detail,\" a pop-up window will appear displaying a summary of the\ntransaction. It includes details such as Transaction ID, Transaction type, User ID, Provider, Region,\nzone, Resource type, Resource ID, SKU ID, Status, provisioning time, creation time, and update time.",
+    "source": "singtel_document.pdf",
+    "page_num": 27,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_Transaction.png",
+    "caption": "Figure: MEC Manager – Transaction"
+  },
+  "dc541cf0-fe58-4fdd-b5cc-29e6b53d3345": {
+    "text": "Figure: MEC Manager – Notifications 6.0 Notifications\nFigure: MEC Manager – Notifications\nIn this dashboard, you will find a table view presenting the notifications in an organized manner. Each\nnotification is categorized by its severity level, which indicates its importance. The severity level helps\nyou quickly understand the urgency of the notification.\nFor each notification, these are the key pieces of information displayed:\nSeverity: This indicates how critical the notification is, ranging from low importance to high\n•\nurgency.\nTitle: The title provides a brief summary of the notification content, giving you an idea of what\n•\nit is about\nMessage: This section contains the detailed information or description related to the\n•\nnotification.\nCode: The code associated with the notification, which can be useful for technical reference or\n•\ntroubleshooting.",
+    "source": "singtel_document.pdf",
+    "page_num": 28,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MEC_Manager_Notifications.png",
+    "caption": "Figure: MEC Manager – Notifications"
+  },
+  "77ff8e87-a640-49b2-a3aa-6ff460593111": {
+    "text": "Figure: Creating Nodes – Step 1 to 4 7.0.1 Creating Nodes – Virtual Machines\nA subnet must already be onboarded to your instance for a node to function.\n1. Select Compute > Nodes.\n2. Press the Create button.\n3. Decide on an accessible Provider. 4. Choose a Region and Zone from the drop-down menus.\nBased on the subnets you have specified; providers will be loaded.\n4. Choose a Resource Group Optionally\nFigure: Creating Nodes – Step 1 to 4\n5. Choose a Subnet using the drop-down menu.",
+    "source": "singtel_document.pdf",
+    "page_num": 30,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_Nodes_Step_1_to_4.png",
+    "caption": "Figure: Creating Nodes – Step 1 to 4"
+  },
+  "f66ac48c-aaf3-420f-92df-2b5d3ed86d00": {
+    "text": "Figure: Creating Nodes – Step 5 5. Choose a Subnet using the drop-down menu.\n6. You will be able to give this node a public IP address if the provider you have chosen is a public\ncloud provider.\nFigure: Creating Nodes – Step 5\n7. From the list, choose a Node Size that is accessible. The availability of nodes in the chosen zone\nis used to filter node sizes. By selecting display all node sizes, you may broaden the display and\naccess more details as well as a search feature.\n8. You can specify a figure for the Number of nodes if you wish to provision more than one\nnode—up to ten nodes. Every node will use the same node size, reservation, and HA settings\nand will be part of the same subnet.\n9. From the drop-down menu, choose the Reservation Type.\n10. Toggle the Enable High Availability switch, if desired.\n11. Select the Enable Auto Recovery toggle, if desired.\n30 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 30,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_Nodes_Step_5.png",
+    "caption": "Figure: Creating Nodes – Step 5"
+  },
+  "81380ace-8274-4f3f-acbe-6c91a8985dad": {
+    "text": "Figure: Creating Nodes – Step 7 to 11 Figure: Creating Nodes – Step 7 to 11\n12. You will see each node as a tab, depending on how many nodes there are. The following\nconfiguration parameters can be set up separately for every node.\n13. Optionally: Turn on the Create from backup image checkbox if you want to build a node from\nan already-existing backup. If the backup image satisfies the aforementioned parameters, you\ncan then choose it.\n14. Choose an available Operating System Image from the drop-down menu if you are not starting\nfrom a backup. Additionally, you can enlarge this view by selecting View all images, which will\ninclude a search feature and additional information.\n15. Give the node a hostname.\n16. Put in your username here. Using RDP or SSH, this will be used to access the node.\n17. Choose an Access Key if it is a Linux-type operating system. This is the public SSH key that will\nbe used to get access to the node. If you do not already have an access key, you can create\none.\n18. If Windows is the operating system type, provide a password that satisfies the pre-set",
+    "source": "singtel_document.pdf",
+    "page_num": 31,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_Nodes_Step_7_to_11.png",
+    "caption": "Figure: Creating Nodes – Step 7 to 11"
+  },
+  "7e918cbb-b926-4b48-ad69-1e16d3364682": {
+    "text": "Figure: Creating Nodes – Steps 12 to 20 Figure: Creating Nodes – Steps 12 to 20\n21. Select Next.\n22. Before proceeding, you can have a look at an overview of what will be made. Click Create if you\nare satisfied with the details. On the list view page, you can see the creation's status.",
+    "source": "singtel_document.pdf",
+    "page_num": 32,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_Nodes_Steps_12_to_20.png",
+    "caption": "Figure: Creating Nodes – Steps 12 to 20"
+  },
+  "59cf667d-a3ae-4590-a82d-dee0e57dd886": {
+    "text": "Figure: Starting a Node – Step 1 7.0.2 Starting a Node – Virtual Machines\nFigure: Starting a Node – Step 1",
+    "source": "singtel_document.pdf",
+    "page_num": 33,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Starting_a_Node_Step_1.png",
+    "caption": "Figure: Starting a Node – Step 1"
+  },
+  "fb4ee6eb-bea4-4a6c-9ddd-33aa973be5d2": {
+    "text": "Figure: Starting a Node – Step 2 Step 1: Click on the “Compute” tab on the top of the dashboard, then click on “Nodes”.\nFigure: Starting a Node – Step 2\nStep 2: Choose the node that you wish to start from the list of nodes in the dashboard, click on the\nnode. *Keep in mind that only a non-active node can be started*\n33 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 33,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Starting_a_Node_Step_2.png",
+    "caption": "Figure: Starting a Node – Step 2"
+  },
+  "494577c1-25ed-4204-ab36-eabbfcd984c8": {
+    "text": "Figure: Starting a Node – Step 3 Figure: Starting a Node – Step 3\nStep 3: Click on the “Start” button and you will see the selected node have successfully started back\non the “Nodes” dashboard with the state displaying “Running”.\n7.0.3 Stopping a Node – Virtual Machines",
+    "source": "singtel_document.pdf",
+    "page_num": 34,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Starting_a_Node_Step_3.png",
+    "caption": "Figure: Starting a Node – Step 3"
+  },
+  "54eb956d-ed9d-40c8-a0f6-dd7494c7d1d9": {
+    "text": "Figure: Stopping a Node 7.0.3 Stopping a Node – Virtual Machines\n**IMPORTANT**\nStopping a node may result in data loss.\nFigure: Stopping a Node\nChoose the node that you wish to start from the list of nodes in the dashboard, click “Stop” and you\nwill see the state displayed as “Stopped”.\n34 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 34,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Stopping_a_Node.png",
+    "caption": "Figure: Stopping a Node"
+  },
+  "28747c02-d081-4ec1-affb-89de8f9c8933": {
+    "text": "Figure: Enabling Node HA highlighted within the main dashboard for nodes. This visual cue serves as a clear indicator that the\nnode has transitioned to a stopped state.\n7.0.4 Enabling/Disabling High Availability on a Node\nA node that has the high availability flag enabled will be protected against hardware failure at the\nzone level. In the event of an unplanned outage, the system will try to immediately transfer your node\nto available hardware so that it may continue operating with the least amount of downtime.\nAs long as a node is not in the creating, updating, removing, failed, or error states, users can enable\nHA on it whenever users want. As soon as the success message is received, the setting will go into\neffect.\nThis can be accessed via an action drop-down menu on already-existing nodes or as a toggle during\nthe node creation process.\nFigure: Enabling Node HA\nIf users enable this, a transaction indicating that HA has been enabled for this node will be generated.\nAs long as a node is not in the creating, updating, removing, failing, or error states, users can also\ndisable HA on it whenever users like. As soon as the success message is received, the setting will go\ninto effect.\n35 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 35,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Enabling_Node_HA.png",
+    "caption": "Figure: Enabling Node HA"
+  },
+  "c5000a7b-9c97-4cb1-9475-77f5d0c7f2ac": {
+    "text": "Figure: Disabling Node HA Figure: Disabling Node HA\nWhen this is disabled, a transaction indicating that HA has been disabled for this node will be\ngenerated.",
+    "source": "singtel_document.pdf",
+    "page_num": 36,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Disabling_Node_HA.png",
+    "caption": "Figure: Disabling Node HA"
+  },
+  "290d8ccc-b44e-4b2d-8206-9e441ad5ecde": {
+    "text": "Figure: Nodes – Provisioning Status generated.\n7.0.5 Provisioning Status on Nodes\nFigure: Nodes – Provisioning Status\nA node will first appear as though it is provisioning, as shown and then it will be operational, as\nindicated by the notification icon located in the upper right corner.\n36 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 36,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Nodes_Provisioning_Status.png",
+    "caption": "Figure: Nodes – Provisioning Status"
+  },
+  "de579b45-1108-419d-8adc-c3cc723d9fc9": {
+    "text": "Figure: Nodes – Indication of successful provisioning Figure: Nodes – Indication of successful provisioning",
+    "source": "singtel_document.pdf",
+    "page_num": 37,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Nodes_Indication_of_successful_provisioning.png",
+    "caption": "Figure: Nodes – Indication of successful provisioning"
+  },
+  "c3bb8cb8-cb2e-4a20-bbb3-c073f8deed42": {
+    "text": "Figure: Creating a Snapshot – Step 1 8.0.1 Creating a Snapshot\nFigure: Creating a Snapshot – Step 1\nStep 1: To begin, click on the “Storage” tab and click on “Snapshots”.",
+    "source": "singtel_document.pdf",
+    "page_num": 39,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_Snapshot_Step_1.png",
+    "caption": "Figure: Creating a Snapshot – Step 1"
+  },
+  "968411fa-a0b0-4f45-abda-94f185292f49": {
+    "text": "Figure: Creating a Snapshot – Step 3 to 8 Step 1: To begin, click on the “Storage” tab and click on “Snapshots”.\nAt this page, you will be able to view a table of all the available snapshots created and manage them.\nFigure: Creating a Snapshot – Step 3 to 8\nStep 3: Choose an available region.\nStep 4: Choose an available zone from the region.\nStep 5: Select the node you would like to take a snapshot of.\n39 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 39,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_Snapshot_Step_3_to_8.png",
+    "caption": "Figure: Creating a Snapshot – Step 3 to 8"
+  },
+  "a9802f7b-cfc1-4833-a185-23809e9e1a54": {
+    "text": "Figure: Snapshots – Successful creation Step 6: State if you would like to include RAM.\nStep 7: Provide a name for the snapshot.\nStep 8: Ensure all the information are correctly filled in and selected, click on the “Create” button once\nthis is verified.\nFigure: Snapshots – Successful creation\nThe created snapshot will then appear on the “Snapshot” dashboard with the state progressing from\n“In Progress” to “Available.”",
+    "source": "singtel_document.pdf",
+    "page_num": 40,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Snapshots_Successful_creation.png",
+    "caption": "Figure: Snapshots – Successful creation"
+  },
+  "b7ce4f1a-ab87-4ce0-985e-47440828db7d": {
+    "text": "Figure: Restoring a Snapshot – Step 1 “In Progress” to “Available.”\n8.0.2 Restoring a Snapshot\nFigure: Restoring a Snapshot – Step 1",
+    "source": "singtel_document.pdf",
+    "page_num": 40,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Restoring_a_Snapshot_Step_1.png",
+    "caption": "Figure: Restoring a Snapshot – Step 1"
+  },
+  "9fd96535-1e4a-4f3a-881b-e084a02f0fa9": {
+    "text": "Figure: Restoring a Snapshot – Step 2 Step 1: Click on the snapshot you want to restore under the “Actions” column.\nFigure: Restoring a Snapshot – Step 2\n40 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 40,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Restoring_a_Snapshot_Step_2.png",
+    "caption": "Figure: Restoring a Snapshot – Step 2"
+  },
+  "62922d4b-f5ef-4518-b766-0b9ef84619e3": {
+    "text": "Figure: Snapshots – Successful restoration of a snapshot Step 2: After the popup box displaying the accurate node information appears, simply click \"Confirm\"\nto initiate the restoration process. You can also view this event in the \"Transactions Logs\" tab located\nwithin the \"Services\" section.\nFigure: Snapshots – Successful restoration of a snapshot\nStep 3: Following confirmation, watch for the notification indicating the successful restoration of the\nsnapshot.",
+    "source": "singtel_document.pdf",
+    "page_num": 41,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Snapshots_Successful_restoration_of_a_snapshot.png",
+    "caption": "Figure: Snapshots – Successful restoration of a snapshot"
+  },
+  "80e8fdee-c2d7-4082-9557-50073ab98564": {
+    "text": "Figure: Snapshots – Deleting a snapshot snapshot.\n8.0.3 Deleting a Snapshot\nFigure: Snapshots – Deleting a snapshot\nStep 1: Click on the snapshot you want to delete under the “Actions” column.\n**IMPORTANT**\nIt is important to proceed with caution when deleting records, data, or rules.\n41 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 41,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Snapshots_Deleting_a_snapshot.png",
+    "caption": "Figure: Snapshots – Deleting a snapshot"
+  },
+  "bf01fb08-6836-4724-9c31-de4a4570f826": {
+    "text": "Figure: Snapshot – Pop up box for confirming deletion. Figure: Snapshot – Pop up box for confirming deletion.\nStep 2: After the popup box displaying the accurate node information appears, simply click \"Confirm\"",
+    "source": "singtel_document.pdf",
+    "page_num": 42,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Snapshot_Pop_up_box_for_confirming_deletion.png",
+    "caption": "Figure: Snapshot – Pop up box for confirming deletion."
+  },
+  "b3266520-449c-4634-94c2-a174f8c8fb7a": {
+    "text": "Figure: Snapshot – Pop up for successful deletion of snapshot. Step 2: After the popup box displaying the accurate node information appears, simply click \"Confirm\"\nto initiate the deletion process. You can also view this event in the \"Transactions Logs\" tab located\nwithin the \"Services\" section.\nFigure: Snapshot – Pop up for successful deletion of snapshot.\n8.0.4 Creating a Backup\n42 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 42,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Snapshot_Pop_up_for_successful_deletion_of_snapshot.png",
+    "caption": "Figure: Snapshot – Pop up for successful deletion of snapshot."
+  },
+  "b06e035c-dd52-47bd-b76a-b319567e4480": {
+    "text": "Figure: Creating a Backup – Step 1 Figure: Creating a Backup – Step 1",
+    "source": "singtel_document.pdf",
+    "page_num": 43,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_Backup_Step_1.png",
+    "caption": "Figure: Creating a Backup – Step 1"
+  },
+  "f9177153-05e3-43b7-827e-ba5f4017b452": {
+    "text": "Figure: Backup – Form inputs for creation Step 1: Go to Backups under Storage. To start creating a backup for a particular node, click Create.\nFigure: Backup – Form inputs for creation\n43 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 43,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Backup_Form_inputs_for_creation.png",
+    "caption": "Figure: Backup – Form inputs for creation"
+  },
+  "037dcf92-ba69-4e76-8629-9d4f5ff0d4f2": {
+    "text": "Figure: Backups - Backup successfully created. Step 2: Complete the necessary information in the details.\nSome details to complete are as follows: -Node backup provider.\n•\nThe node's current region and zone.\n•\n-The desired backup mode, either Safe or Snapshot.\n•\nWhile safe mode stops the node to perform a slower but more consistent backup, snapshot has the\nlowest operation downtime and keeps the node running.\nClick submit once you've chosen the node you wish to backup.\nFigure: Backups - Backup successfully created.\nStep 3: Confirm that the backup has been created when the backup node shows up on the backup\ntab and when the notification appears after submitting.",
+    "source": "singtel_document.pdf",
+    "page_num": 44,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Backups_-_Backup_successfully_created.png",
+    "caption": "Figure: Backups - Backup successfully created."
+  },
+  "81bfa400-d058-4e68-b9a8-c13a2fdf33cf": {
+    "text": "Figure: Restoring a Backup – Step 1 8.0.5 Restoring a Backup\nFigure: Restoring a Backup – Step 1\nStep 1: At the main page, click on the “Storage” section and within the section, click on the “Backups”\ntab to proceed.",
+    "source": "singtel_document.pdf",
+    "page_num": 45,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Restoring_a_Backup_Step_1.png",
+    "caption": "Figure: Restoring a Backup – Step 1"
+  },
+  "4f350cbb-92f3-4b1d-8471-8e7d26205c92": {
+    "text": "Figure: Restore Backup – Pop up box. tab to proceed.\nStep 2: At the “Backup” dashboard, select the backup from the table, click on “Restore” under the\n“Action” column.\nFigure: Restore Backup – Pop up box.\nStep 3: Provide a new name for the volume.\nStep 4: This step will vary based on your preferences to detach any non-root volumes that are\ncurrently attached to the node for later use or destroyed.\n45 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 45,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Restore_Backup_Pop_up_box.png",
+    "caption": "Figure: Restore Backup – Pop up box."
+  },
+  "5110d6b3-83a6-490d-97e2-1fe8d1e0a734": {
+    "text": "Figure: Backups – Successful restoration of backup. Step 5: Click on the “Restore” button once you have filled and selected the respective fields.\nFigure: Backups – Successful restoration of backup.",
+    "source": "singtel_document.pdf",
+    "page_num": 46,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Backups_Successful_restoration_of_backup.png",
+    "caption": "Figure: Backups – Successful restoration of backup."
+  },
+  "81a80a92-58e4-47ff-99a9-9f9b4bb5cd36": {
+    "text": "Figure: Backups – Deleting a backup. 8.0.6 Deleting a Backup\nFigure: Backups – Deleting a backup.\nStep 1: Click on the snapshot and select Actions then Delete to remove a backup.\n46 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 46,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Backups_Deleting_a_backup.png",
+    "caption": "Figure: Backups – Deleting a backup."
+  },
+  "4e2aace0-c9dc-4a7a-b4ee-fbded8d0ad0e": {
+    "text": "Figure: Backups – Confirmation for backup deletion Figure: Backups – Confirmation for backup deletion",
+    "source": "singtel_document.pdf",
+    "page_num": 47,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Backups_Confirmation_for_backup_deletion.png",
+    "caption": "Figure: Backups – Confirmation for backup deletion"
+  },
+  "9b89fb4e-b239-457e-8395-2bf3940c2465": {
+    "text": "Figure: Backups – Successful deletion of backup. Step 2: To confirm the deletion of the backup, a pop-up window would display. Select \"Confirm\".\nFigure: Backups – Successful deletion of backup.\nStep 3: Users should receive a notification indicating that the backup has been deleted after they\nacknowledge the deletion. To verify that the removed node backup is not shown in the backup\ndashboard view, which would indicate that the deletion was successful.\n47 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 47,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Backups_Successful_deletion_of_backup.png",
+    "caption": "Figure: Backups – Successful deletion of backup."
+  },
+  "0e994727-0394-4814-ae3d-9b8145d87660": {
+    "text": "Figure: Scheduling a Backup – Step 1 9.0 Managing your Schedules\nA schedule enables automated backups or snapshots at designated intervals and times. You can\nselect multiple nodes within a single schedule, but they must share the same type (backup or\nsnapshot) and belong to the same zone for effective scheduling.\n9.0.1 Scheduling a Backup\nFigure: Scheduling a Backup – Step 1\nStep 1: Go to the \"Services\" section and choose \"Scheduler.\"\nStep 2: Click on \"Create.\"",
+    "source": "singtel_document.pdf",
+    "page_num": 48,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduling_a_Backup_Step_1.png",
+    "caption": "Figure: Scheduling a Backup – Step 1"
+  },
+  "900432cd-c844-4de7-bdc2-bbff632e822d": {
+    "text": "Figure: Scheduling a Backup – Form Inputs Figure: Scheduling a Backup – Form Inputs\nStep 2: Fill out the schedule creation page with the information below:\n1. Indicate the node's Zone and Region.\n2. Select the Type from the list of options, choosing between backup and snapshot. Make sure to\nchoose the backup method as well if backup is selected.",
+    "source": "singtel_document.pdf",
+    "page_num": 49,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduling_a_Backup_Form_Inputs.png",
+    "caption": "Figure: Scheduling a Backup – Form Inputs"
+  },
+  "ed93dd07-7013-437f-91c5-77869b4d1fe8": {
+    "text": "Figure: Scheduler – Created successfully. choose the backup method as well if backup is selected.\n3. Establish the frequency, or the number of times per day that the backup should run.\n4. Establish the Start time and plan for the task to begin no later than one hour from the\nselected time.\nAfter finishing, click \"Submit\" to continue.\nFigure: Scheduler – Created successfully.\nStep 3: Verify that the scheduler is established when the backup appears as indicated and when the\nnotification pops up after submitting.\n49 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 49,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_Created_successfully.png",
+    "caption": "Figure: Scheduler – Created successfully."
+  },
+  "6562d0c8-3218-404d-a794-885c1447e7b1": {
+    "text": "Figure: Scheduler – Disabling a Scheduler 9.0.2 Disabling a Scheduler\nFigure: Scheduler – Disabling a Scheduler",
+    "source": "singtel_document.pdf",
+    "page_num": 50,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_Disabling_a_Scheduler.png",
+    "caption": "Figure: Scheduler – Disabling a Scheduler"
+  },
+  "a988f485-8f9b-414f-844a-9c771c09cb4e": {
+    "text": "Figure: Scheduler – Confirmation for disabling scheduler. Step 1: Choose the schedule from the scheduler tab, then select Actions then Disable.\nFigure: Scheduler – Confirmation for disabling scheduler.\nStep 2: You'll be prompted with a popup window to confirm that you wish to turn off the scheduler.",
+    "source": "singtel_document.pdf",
+    "page_num": 50,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_Confirmation_for_disabling_scheduler.png",
+    "caption": "Figure: Scheduler – Confirmation for disabling scheduler."
+  },
+  "30bef649-8360-4e50-b3c2-455c631e08f2": {
+    "text": "Figure: Scheduler – State reflects as Disabled. Step 2: You'll be prompted with a popup window to confirm that you wish to turn off the scheduler.\nSelect \"Confirm\".\nFigure: Scheduler – State reflects as Disabled.\nStep 3: The schedule has been successfully disabled when, after some time, the scheduler state\nindicates that it is disabled.\n9.0.3 Enabling a Scheduler\n50 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 50,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_State_reflects_as_Disabled.png",
+    "caption": "Figure: Scheduler – State reflects as Disabled."
+  },
+  "15f4a29a-d52f-4fa1-9f7d-721142454a5a": {
+    "text": "Figure: Scheduler – Enabling a Scheduler Figure: Scheduler – Enabling a Scheduler",
+    "source": "singtel_document.pdf",
+    "page_num": 51,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_Enabling_a_Scheduler.png",
+    "caption": "Figure: Scheduler – Enabling a Scheduler"
+  },
+  "0feb2bb6-9f74-40f3-9e04-26b4f1ec0eed": {
+    "text": "Figure: Scheduler – Confirmation for enabling. Step 1: Choose the schedule from the scheduler tab, then select Actions then Enable.\nFigure: Scheduler – Confirmation for enabling.\nStep 2: You'll be prompted to confirm if you wish to enable the scheduler using a popup box. Select",
+    "source": "singtel_document.pdf",
+    "page_num": 51,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_Confirmation_for_enabling.png",
+    "caption": "Figure: Scheduler – Confirmation for enabling."
+  },
+  "75db3e80-ab45-4f9d-a0d6-fa6ad986aa01": {
+    "text": "Figure: Scheduler – State displayed as Enabled. Step 2: You'll be prompted to confirm if you wish to enable the scheduler using a popup box. Select\n\"Confirm\".\nFigure: Scheduler – State displayed as Enabled.\nStep 3: The schedule has been properly activated when, after a while, the scheduler state shows that it\nis enabled.\n9.0.4 Deleting a Scheduler\n51 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 51,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_State_displayed_as_Enabled.png",
+    "caption": "Figure: Scheduler – State displayed as Enabled."
+  },
+  "3e0b665e-1804-4a23-b9dd-7fd6ac758871": {
+    "text": "Figure: Scheduler – Deleting a Scheduler Figure: Scheduler – Deleting a Scheduler",
+    "source": "singtel_document.pdf",
+    "page_num": 52,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_Deleting_a_Scheduler.png",
+    "caption": "Figure: Scheduler – Deleting a Scheduler"
+  },
+  "363582bf-211c-4bbd-9bc7-f283efd71ee0": {
+    "text": "Figure: Scheduler – Confirmation for Deletion Step 1: Choose the schedule from the scheduler tab, then select Actions then Delete.\nFigure: Scheduler – Confirmation for Deletion\nStep 2: You'll be prompted to confirm that you wish to remove the scheduler using a popup box.",
+    "source": "singtel_document.pdf",
+    "page_num": 52,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_Confirmation_for_Deletion.png",
+    "caption": "Figure: Scheduler – Confirmation for Deletion"
+  },
+  "3685cbfb-3e04-48c0-bec7-cb091dadcb30": {
+    "text": "Figure: Scheduler – Successful deletion of Scheduler Step 2: You'll be prompted to confirm that you wish to remove the scheduler using a popup box.\nSelect \"Confirm\".\nFigure: Scheduler – Successful deletion of Scheduler\n52 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 52,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Scheduler_Successful_deletion_of_Scheduler.png",
+    "caption": "Figure: Scheduler – Successful deletion of Scheduler"
+  },
+  "71a6a5a3-6f19-4d5b-9015-32fd5deb5e60": {
+    "text": "Figure: Creating Subnets Step 3: You ought to see a notification stating that the scheduler has been erased after validating the\ndeletion. Verify that the deleted schedule is not shown in the scheduler dashboard view, which would\nindicate that the deletion was successful.\n10.0 Network Management\n10.0.1 Creating a Subnet\nThere are not any requirements to establish a subnet, but users must do it before users may establish\na node.\nFigure: Creating Subnets\n1. Choose Network > Subnets.\n2. Select Create.\n3. From the drop-down menu, choose a provider. This will load the regions that are available.\n4. To load the available zones, select the Region.\n5. Choose the Zone in which you want to construct your subnet.\n6. Choose a Virtual Network from the drop-down menu if one is available. This CIDR will be used\nto assign a subnet.\n7. Choose a Resource Group to link this subnet to if you would like.\n8. Press the Create button. Once this is finished, you will receive a notification and the subnet will\nbe ready for usage.",
+    "source": "singtel_document.pdf",
+    "page_num": 53,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_Subnets.png",
+    "caption": "Figure: Creating Subnets"
+  },
+  "4f57935b-5cde-4d6c-b389-763a40b44fec": {
+    "text": "Figure: Creating a Subnet – Steps 2 to 8 Figure: Creating a Subnet – Steps 2 to 8\n10.0.2 Allocating/Releasing Elastic IPs\nFigure: Selecting Elastic IPs",
+    "source": "singtel_document.pdf",
+    "page_num": 54,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_Subnet_Steps_2_to_8.png",
+    "caption": "Figure: Creating a Subnet – Steps 2 to 8"
+  },
+  "41be2a58-1d5c-4ff6-aa37-a25b91d723fd": {
+    "text": "Figure: Elastic IP - Dashboard Figure: Elastic IP - Dashboard\nAn Elastic IP must be assigned before users can use it for anything. The instance will be allocated and\nmade usable using an accessible IP address. As soon as it is assigned, users will have it assigned to\nthem until it is relinquished.",
+    "source": "singtel_document.pdf",
+    "page_num": 55,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Elastic_IP_-_Dashboard.png",
+    "caption": "Figure: Elastic IP - Dashboard"
+  },
+  "cdd1ee68-9e16-44f6-b1a0-ddeedaea33a4": {
+    "text": "Figure: Elastic IP – Selected Record them until it is relinquished.\nOnly resources from the same provider and within the same zone may be utilized with elastic IPs.\nElastic IPs cannot be transferred between zones.\nFigure: Elastic IP – Selected Record\nOnce the instance is up and running, users can request the allocation of an Elastic IP at any time. By\ndoing this, the IP provided will become exclusively theirs to use.\n55 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 55,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Elastic_IP_Selected_Record.png",
+    "caption": "Figure: Elastic IP – Selected Record"
+  },
+  "23a52b0d-8eef-4466-9df9-8acb28bbdac8": {
+    "text": "Figure: Elastic IP - Allocating Elastic IP Figure: Elastic IP - Allocating Elastic IP\n1. Open the Network > Elastic IPs menu.\n2. Select \"Allocate\"\n3. Decide on a Zone and Region.\n4. Choose a Provider that is available. What resources can be used with this IP will be determined\nby this. For instance, the node provider and elastic IP must match.\n5. Select Allocate. You will be assigned an IP as long as there are IPs available within the Zone\nand Provider. In the list view, it ought to appear as Available.\nYou can use an Elastic IP with Node Connect or App Connect after it is in the Available state.\nYou will not be able to utilize an elastic IP after you release it; the IP will be returned to the service\nprovider. An Elastic IP can only be released while it is in the Available state.",
+    "source": "singtel_document.pdf",
+    "page_num": 56,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Elastic_IP_-_Allocating_Elastic_IP.png",
+    "caption": "Figure: Elastic IP - Allocating Elastic IP"
+  },
+  "b94c0efd-4e82-4372-ac30-473a92d57664": {
+    "text": "Figure: Creating a NAT Gateway – Step 1 10.0.3 Creating NAT Gateways\nFigure: Creating a NAT Gateway – Step 1\nStep 1: Click on the “Network” tab, select “NAT Gateways” to begin.",
+    "source": "singtel_document.pdf",
+    "page_num": 57,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_NAT_Gateway_Step_1.png",
+    "caption": "Figure: Creating a NAT Gateway – Step 1"
+  },
+  "d8e7df21-85b3-4b9c-b517-2e946d512011": {
+    "text": "Figure: Selecting your network settings from the available options – Step 3 to 5 Step 1: Click on the “Network” tab, select “NAT Gateways” to begin.\nStep 2: Once you have landed on the “NAT Gateways” page, click on the “Create” button.\nFigure: Selecting your network settings from the available options – Step 3 to 5\nStep 3: Select your zone from the available options in the dropdown list under the “Zone” field.\nStep 4: Select your elastic IP from the available options in the dropdown list under the “Elastic IP”\nfield.\nStep 5: Select the correct subnet in the “Subnet” field.\n57 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 57,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Selecting_your_network_settings_from_the_available_options_S.png",
+    "caption": "Figure: Selecting your network settings from the available options – Step 3 to 5"
+  },
+  "273a2e54-4286-4ca7-9686-38f88c218c7f": {
+    "text": "Figure: NAT Gateway – Created successfully. Step 6: Provide a name to associate with the NAT gateway in the “Name” field.\nStep 7: Once you have verified all the relevant information are correct, proceed to click on the\n“Submit” button.\nFigure: NAT Gateway – Created successfully.",
+    "source": "singtel_document.pdf",
+    "page_num": 58,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-NAT_Gateway_Created_successfully.png",
+    "caption": "Figure: NAT Gateway – Created successfully."
+  },
+  "461ab0ad-3210-48e9-a1b4-7e1ee83a2ef5": {
+    "text": "Figure: Creating a Network Policy 10.0.4 Creating Network Policies\nNetwork policies provide you the power to designate and establish guidelines for any network or\nelastic IP that you control. This enables you to specifically control outgoing and incoming rules for\nevery Elastic IP address and subnet that you have.\nThese policies let you implicitly allow or prohibit protocols, ports, and IP ranges in either direction of\ncommunication, giving you the ability to create precise traffic limitations (rules) between your\nnetworks. You can safeguard your environments with a \"three tier architecture\" by utilizing these\npolicies.\nFigure: Creating a Network Policy\nStep 1: Click on the “Network” tab, select “Network Policies” to begin.\nStep 2: Once you have landed on the “Network Policies” dashboard, click on the “Create” button.",
+    "source": "singtel_document.pdf",
+    "page_num": 59,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_Network_Policy.png",
+    "caption": "Figure: Creating a Network Policy"
+  },
+  "2d3cd5de-4d6b-4aeb-810d-be4150930695": {
+    "text": "Figure: Create Network Policy - Form Inputs Figure: Create Network Policy - Form Inputs\nStep 3: Provide a name for the network policy under the “Name” field.\nStep 4: Select the type (Subnet OR Elastic IP) for this network policy to be assigned to under the\n“Type” field.\nStep 5: Select the Elastic IP OR Subnet as defined in Step 4 that the network will be assigned to under",
+    "source": "singtel_document.pdf",
+    "page_num": 60,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Create_Network_Policy_-_Form_Inputs.png",
+    "caption": "Figure: Create Network Policy - Form Inputs"
+  },
+  "459a1dba-98b8-459a-8289-ea275c571b15": {
+    "text": "Figure: Network Policy – Created successfully. Step 5: Select the Elastic IP OR Subnet as defined in Step 4 that the network will be assigned to under\nthe “Assignment” field.\nStep 6: Define your inbound/outbound rules, accordingly, enter a valid IP, CIDR, port.\nStep 7: Once you have verified all the relevant information are correct, proceed to click on the\n“Create” button.\nFigure: Network Policy – Created successfully.\nStep 8: Once you have successfully created the policy, it will be displayed in the “Network Policies”\ndashboard.\n60 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 60,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Network_Policy_Created_successfully.png",
+    "caption": "Figure: Network Policy – Created successfully."
+  },
+  "bd44c61c-9110-4fd0-b34a-da3c74b608ee": {
+    "text": "Figure: Network Policies – Delete 10.0.5 Deleting Network Policies\nFigure: Network Policies – Delete\nStep 1: To begin the deletion process, make sure the network policy is selected, then click Actions",
+    "source": "singtel_document.pdf",
+    "page_num": 61,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Network_Policies_Delete.png",
+    "caption": "Figure: Network Policies – Delete"
+  },
+  "cd0c278a-a63a-4513-8cd8-4eeb4c557211": {
+    "text": "Figure: Network Policies – Successful deletion Step 1: To begin the deletion process, make sure the network policy is selected, then click Actions\nthen Delete. When the pop-up window displays, confirm the deletion.\nFigure: Network Policies – Successful deletion\nStep 2: Check to see if the network policy is absent from the dashboard and that the notification\nbanner which appears indicating its deletion has been executed successfully.\n61 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 61,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Network_Policies_Successful_deletion.png",
+    "caption": "Figure: Network Policies – Successful deletion"
+  },
+  "46682144-ccc4-4857-8282-6806f28aed73": {
+    "text": "Figure: Creating a Route – Step 1 10.0.6 Creating Routes\nFigure: Creating a Route – Step 1\nStep 1: Click on the “Network” tab, select “Routes” to begin.",
+    "source": "singtel_document.pdf",
+    "page_num": 62,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_Route_Step_1.png",
+    "caption": "Figure: Creating a Route – Step 1"
+  },
+  "8feba8fd-ff46-4b62-a51e-45cacc02c88c": {
+    "text": "Figure: Creating a Route – Form inputs Step 1: Click on the “Network” tab, select “Routes” to begin.\nStep 2: Once you have landed on the “Routes” dashboard, click on the “Create” button.\nFigure: Creating a Route – Form inputs\nStep 3: Select the type of route (Outbound OR Internal) under the “Type” field.\n62 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 62,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_Route_Form_inputs.png",
+    "caption": "Figure: Creating a Route – Form inputs"
+  },
+  "d962a6b1-94a0-4aed-9a0b-c046a0df4e82": {
+    "text": "Figure: Validation of the Route Step 4: Provide a name for the route under the “Name” field.\nStep 5: Select the zone that this route will be created under the “Zone” field.\nStep 6: In the \"Create Rule\" section, you need to select the source subnet, provide the specific source\nIP address, specify the destination IP address, and indicate the Elastic IP through which the traffic will\nbe routed.\nStep 7: Once you have verified all the relevant information are correct, proceed to click on the “Add”\nbutton.\nFigure: Validation of the Route\nStep 8: Once you have successfully created the route, it will be displayed in the “Routes” dashboard.\n10.0.7 Deleting a Route",
+    "source": "singtel_document.pdf",
+    "page_num": 63,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Validation_of_the_Route.png",
+    "caption": "Figure: Validation of the Route"
+  },
+  "5ec1a829-fd30-49f3-8660-4c3e866aeec0": {
+    "text": "Figure: Routes – Delete Figure: Routes – Delete",
+    "source": "singtel_document.pdf",
+    "page_num": 64,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Routes_Delete.png",
+    "caption": "Figure: Routes – Delete"
+  },
+  "e9cba755-a80d-4f7b-a099-ad35821724bb": {
+    "text": "Figure: Routes – Successful deletion Step 1: To begin the deletion process, make sure the route is selected, then click Actions then Delete.\nWhen the pop-up window displays, confirm the deletion.\nFigure: Routes – Successful deletion\nStep 2: Confirm that the route is not shown in the dashboard, along with the notification banner\nconfirming that the route has been deleted as shown above.\n64 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 64,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Routes_Successful_deletion.png",
+    "caption": "Figure: Routes – Successful deletion"
+  },
+  "07347414-4447-44a5-91da-a43a72e1bbe3": {
+    "text": "Figure: Node Connect – Create 11.0 Node Connect\nNode Connect provides inbound connectivity from an external network to a node’s network interface\nthrough an allocated elastic IP in the same zone. It is a 1:1 mapping of elastic IP to the network\ninterface private IP.\nThe elastic IP used in a node connect will be dedicated to this connection and not available for other\nnode connects while the current assignment is still active. You can create and delete node connects at\nany time to allow a single elastic IP to be dynamically assigned to different network interface (limited\nto one network interface at a time).\n11.0.1 Creating a Node Connect\nFigure: Node Connect – Create\nStep 1: Navigate to Connect, then click on “Node Connect”.\nStep 2: Click on the “Create” button.\n65 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 65,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Node_Connect_Create.png",
+    "caption": "Figure: Node Connect – Create"
+  },
+  "f2a65f1f-fe57-4c61-b234-775aca6d95c6": {
+    "text": "Figure: Node Connect – Form Input for Creating Figure: Node Connect – Form Input for Creating\n.\nStep 3: Enter the preferred display name.\nStep 4: To load the available node, choose a zone.",
+    "source": "singtel_document.pdf",
+    "page_num": 66,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Node_Connect_Form_Input_for_Creating.png",
+    "caption": "Figure: Node Connect – Form Input for Creating"
+  },
+  "9e39b365-0060-4890-9c8f-8dda3c14493b": {
+    "text": "Figure: Node Connect – Successful creation. Step 4: To load the available node, choose a zone.\nStep 5: Choose a Node to load the network interface that is attached. 6. Decide on a Network\nInterface.\nStep 6: Click \"Submit\" after choosing an Elastic IP.\nFigure: Node Connect – Successful creation.\n66 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 66,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Node_Connect_Successful_creation.png",
+    "caption": "Figure: Node Connect – Successful creation."
+  },
+  "a1d1e43b-1b5d-4e90-b3d3-5301828b5e32": {
+    "text": "Figure: SSH Keys - Creating SSH Keys 12.0 Creating SSH Keys\nFigure: SSH Keys - Creating SSH Keys",
+    "source": "singtel_document.pdf",
+    "page_num": 67,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-SSH_Keys_-_Creating_SSH_Keys.png",
+    "caption": "Figure: SSH Keys - Creating SSH Keys"
+  },
+  "594493f1-f34e-4865-8ff1-375bd0d34de6": {
+    "text": "Figure: SSH Keys - Generating SSH Keys Step 1: Go to “Services” tab, click on “SSH Keys” to begin.\nFigure: SSH Keys - Generating SSH Keys\nStep 2: Provide a name to associate the SSH Key with.\nStep 3: Paste the public key in the textbox provided.\nStep 5: Click on the “Create” button.\nOnce the steps are completed, you should be able to see your SSH key displayed on the dashboard.\n67 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 67,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-SSH_Keys_-_Generating_SSH_Keys.png",
+    "caption": "Figure: SSH Keys - Generating SSH Keys"
+  },
+  "12ac4a51-de5b-4ea7-89a1-ed7dbca2e1f6": {
+    "text": "Figure: SSH Keys - Deleting a SSH Key Figure: SSH Keys - Deleting a SSH Key\nSelect the key you wish to remove, then pick Delete from the Actions menu in the upper right corner.\nClick on the “Confirm” button to execute the deletion.",
+    "source": "singtel_document.pdf",
+    "page_num": 68,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-SSH_Keys_-_Deleting_a_SSH_Key.png",
+    "caption": "Figure: SSH Keys - Deleting a SSH Key"
+  },
+  "70dd5efa-23ee-4364-89b1-78116db5382b": {
+    "text": "Figure: Storage – Block Volumes 13.0 Volume Management\nBlock volumes can be created from available shared storage offered by Platform Manager to attach\ndirectly to available nodes. These volumes are block storage type volumes which are provided by the\nstorage clusters in each region and available zones. When creating a new volume, you can either\nspecify the node you want the volume attached to, or simply create an unattached volume to be\nattached later on. If attaching at the time of creation, the volume and the node must be within the\nsame zone. You can request any sized volume in GB; however, some larger sizes may not be available.\nAny volumes you attach will be presented in the node OS as an unformatted block device or volume.\nYou will need to mount and format the volume as per your own requirements. Root volumes are\ncreated and attached as part of node provisioning and cannot be attached or detached. From the\nvolumes page you can only manage additional volumes.\nFigure: Storage – Block Volumes\nTo get started, navigate to the \"Storage\" tab, and select \"Block Volumes.\"",
+    "source": "singtel_document.pdf",
+    "page_num": 69,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Storage_Block_Volumes.png",
+    "caption": "Figure: Storage – Block Volumes"
+  },
+  "a3a9ad1c-722f-4a49-94fd-31ee239aba92": {
+    "text": "Figure: Block Volumes - Creating a Block Volume Figure: Block Volumes - Creating a Block Volume\nStep 2: Complete the essential information in the details.\nThis includes:\n1. Azure/AWS cloud as the preferred provider.\n2. The volume type, which is decided by the service provider.\n3. the zone from where the block volume will be located.",
+    "source": "singtel_document.pdf",
+    "page_num": 70,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Block_Volumes_-_Creating_a_Block_Volume.png",
+    "caption": "Figure: Block Volumes - Creating a Block Volume"
+  },
+  "ac98d906-ee53-445d-9bdf-b7647aba062c": {
+    "text": "Figure: Block Volumes – Successful creation 3. the zone from where the block volume will be located.\n4. the block volume's location.\n5. the volume size, which specifies the volume's overall size in gigabytes.\n6. (Optional) Attaching a node from an available node above a zone and region of choice.\nDuring the creation process, this volume will automatically attach; it won't be formatted or\nmounted.\nFinally, click on “Submit”.\nFigure: Block Volumes – Successful creation\n70 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 70,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Block_Volumes_Successful_creation.png",
+    "caption": "Figure: Block Volumes – Successful creation"
+  },
+  "5124ae8c-9b6b-4957-acd3-d0b5176d6bb3": {
+    "text": "Figure: Block Volumes - Attaching a Volume If the volume is created and not assigned to a node, it should be reflected on the block volume\ndashboard with the state ‘Available’.\n13.0.1 Attaching a Volume\nFigure: Block Volumes - Attaching a Volume",
+    "source": "singtel_document.pdf",
+    "page_num": 71,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Block_Volumes_-_Attaching_a_Volume.png",
+    "caption": "Figure: Block Volumes - Attaching a Volume"
+  },
+  "30baa030-0883-4687-b3ff-1674485c52de": {
+    "text": "Figure: Attaching a Block Volume – Confirmation Step 1: To attach the block volume, click on the checkbox on the volume then click on Attach under\nActions.\nFigure: Attaching a Block Volume – Confirmation",
+    "source": "singtel_document.pdf",
+    "page_num": 71,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Attaching_a_Block_Volume_Confirmation.png",
+    "caption": "Figure: Attaching a Block Volume – Confirmation"
+  },
+  "4fa4ac56-fa9c-4b60-a5aa-9336f4cd7c39": {
+    "text": "Figure: Block Volumes – Attached State Step 2: A pop up will appear to let you select on a node that you would need to attach to. Click on a\nnode from the dropdown menu to select and confirm.\nFigure: Block Volumes – Attached State\n71 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 71,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Block_Volumes_Attached_State.png",
+    "caption": "Figure: Block Volumes – Attached State"
+  },
+  "c321f50b-236d-4537-ae6f-b7fe6aca5de4": {
+    "text": "Figure: Cloud Connect – Creating a Cloud Connect Cloud Connect enables secure connectivity between MEC Manager zone subnets and public cloud\nsubnets by establishing IPsec tunnels. This allows you to connect your MEC Manager subnets either\nto subnets created within your instance or to subnets in your own cloud accounts. The process\nleverages public cloud VPN endpoints to create secure connections between your distributed\nresources and public cloud regions.\nCloud Connect offers automation in the provisioning process, including options to reuse existing\npublic cloud resources like VPN gateways and route tables, helping to streamline setup and minimize\ndisruptions to your existing infrastructure. Depending on the type of subnet (managed or\nunmanaged), the platform handles the connection either automatically or through credentials that\nallow access to your public cloud resources for configuration.\n14.0.1 Creating a Cloud Connect\nFigure: Cloud Connect – Creating a Cloud Connect\nTo begin, click onto the Cloud Connect label under the Connect section in the side menu, then click\non “Create”.\n72 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 72,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Cloud_Connect_Creating_a_Cloud_Connect.png",
+    "caption": "Figure: Cloud Connect – Creating a Cloud Connect"
+  },
+  "c391e8ce-02dd-4b8e-b9e1-fcbd27d5bbd5": {
+    "text": "Figure: Creating a cloud connect – Select Provisioning type Figure: Creating a cloud connect – Select Provisioning type\nStep 1: Select the type between Managed or Unmanaged.",
+    "source": "singtel_document.pdf",
+    "page_num": 73,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_cloud_connect_Select_Provisioning_type.png",
+    "caption": "Figure: Creating a cloud connect – Select Provisioning type"
+  },
+  "afadcf67-9972-45c8-a2d5-1a95fd334e52": {
+    "text": "Figure: Creating a cloud connect – Subnet Step 2: Select the supported cloud provider.\nStep 3: Enter the preferred name for this cloud connect then click Next.\nFigure: Creating a cloud connect – Subnet\nStep 4: Select the region from the dropdown menu.\nStep 5: Select the zone from the available list.\nStep 6: Select the subnet then click Next.\n73 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 73,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_cloud_connect_Subnet.png",
+    "caption": "Figure: Creating a cloud connect – Subnet"
+  },
+  "4f638b74-ab0f-42c5-8c27-4d4372af9718": {
+    "text": "Figure: Creating a cloud connect – Public Cloud Subnet Figure: Creating a cloud connect – Public Cloud Subnet\nStep 7: Select the region from the available list, this will populate the zone field as well.",
+    "source": "singtel_document.pdf",
+    "page_num": 74,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_cloud_connect_Public_Cloud_Subnet.png",
+    "caption": "Figure: Creating a cloud connect – Public Cloud Subnet"
+  },
+  "630ad863-5fa4-43cc-b873-79c9838087b5": {
+    "text": "Figure: Creating a cloud connect – Review and create. Step 7: Select the region from the available list, this will populate the zone field as well.\nStep 8: Select the subnet in the zone, then next.\nFigure: Creating a cloud connect – Review and create.\nFinally, upon filling all the required fields for this creation, review the information for each phase and\nclick on the “Create” button when all information provided is accurate as per your needs.\n15.0 Cross Connect\nCross Connect allows users to link different cloud or express connections directly within a single\nregion. Each connection creates one or more gateways (Cloud Gateways or Express Gateways), and\n74 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 74,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_cloud_connect_Review_and_create.png",
+    "caption": "Figure: Creating a cloud connect – Review and create."
+  },
+  "3b8e0e52-9c04-44d9-b7a1-94b675adaa8e": {
+    "text": "Figure: Cross Connect Flow Chart Cross Connect enables these gateways to communicate directly, allowing seamless connectivity\nbetween different cloud or express connections within the same zone.\nIf users have at least two zone-level connections (cloud or express), they can use Cross Connect to\nlink them. This is done by adding the external networks associated with each connection into the\nCross Connect, which then establishes direct communication between them.\nFor example, if users connect a customer site network and a public cloud network (like Azure), they\nenable these networks to communicate directly using private IP addresses. The existing infrastructure\ntakes care of routing the traffic without impacting the subnets in the zone. This setup allows multiple\nconnections to interact smoothly without disrupting any existing network paths.\nBy setting up Cross Connect, users make it easy for traffic to flow between networks, while still\nkeeping the core zone setup unchanged.\nFigure: Cross Connect Flow Chart\n15.0.1 Creating a Cross Connect\n75 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 75,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Cross_Connect_Flow_Chart.png",
+    "caption": "Figure: Cross Connect Flow Chart"
+  },
+  "67691137-bae3-458d-9aea-78c4f8891474": {
+    "text": "Figure: Cross Connect – Creating a Cross Connect Figure: Cross Connect – Creating a Cross Connect\nStep 1: Navigate to the side menu and expand the Connect menu, then click on Cross Connect.",
+    "source": "singtel_document.pdf",
+    "page_num": 76,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Cross_Connect_Creating_a_Cross_Connect.png",
+    "caption": "Figure: Cross Connect – Creating a Cross Connect"
+  },
+  "41010cf1-908f-4e4e-ae7b-45a2cb4f41eb": {
+    "text": "Figure: Creating a Cross Connect – Form input. Step 1: Navigate to the side menu and expand the Connect menu, then click on Cross Connect.\nStep 2: Click on the “Create” button.\nFigure: Creating a Cross Connect – Form input.\nStep 3: Enter the display name for the cross connect.\nStep 4: From the drop-down menu, choose a Zone that is open for use.\nThe list below ought to show you a list of networks that are \"Not Connected.\"\nIf you are unable to see any networks, confirm that the zone has cloud or express connections\naccessible and that no other cross connects are using them.\n76 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 76,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_Cross_Connect_Form_input.png",
+    "caption": "Figure: Creating a Cross Connect – Form input."
+  },
+  "bccc0e27-2900-450f-a49b-425f9460ae58": {
+    "text": "Figure: MCC – Creating a MCC transaction. If the creation process was successful, the status ought to appear as Active.\n16.0 MCP (Multi-Cloud Container Platform)\n16.1.0 MCC (Multi-Cloud Container Cluster)\nManaged Kubernetes clusters, or MCCs, are established using your instance. Although there are\nseveral standard features for automated cluster provisioning and management, these clusters'\nscalability sets them apart from the competition. It enables you to extend your cluster across multiple\ncloud providers and geographical locations, giving you the most flexibility in terms of where your\nservices and applications can run within each cluster.\nThe volumes and load balancers are directly integrated into Multi-cloud container clusters, which are\nalso compatible with regular Kubernetes management tools.\n16.1.1 Creating a Multi-Cloud Container Cluster (MCC)\nFigure: MCC – Creating a MCC\nTo begin, navigate to the MCP section on the side menu, and click on MCC.\nThen, click on Create to proceed.\n77 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 77,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MCC_Creating_a_MCC.png",
+    "caption": "Figure: MCC – Creating a MCC"
+  },
+  "a7f646b1-ae05-4882-ae04-209df70239d4": {
+    "text": "Figure: Creating a MCC – Form Inputs Figure: Creating a MCC – Form Inputs",
+    "source": "singtel_document.pdf",
+    "page_num": 78,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_MCC_Form_Inputs.png",
+    "caption": "Figure: Creating a MCC – Form Inputs"
+  },
+  "a6f68943-b899-4d11-b0fa-0b1cc43c0514": {
+    "text": "Figure: Creating a MCC – Form Inputs Pt 2 Figure: Creating a MCC – Form Inputs Pt 2\nStep 3: Select Provider, Region, and Core Zone:\nProvider: Choose the cloud provider where you want to deploy your cluster (e.g., AWS, Azure, GCP).\nRegion: Select the geographical region for deployment.\nCore Zone: This is where the control plane nodes will be initially deployed. It acts as the \"core zone\"\nfor your cluster.\nStep 4: Enter a Name for the Cluster:\nProvide a unique name for your cluster.\nStep 5: Enter the Desired External Domain:\nThis will be the domain used to access and manage your cluster. It will be appended as a sub-domain",
+    "source": "singtel_document.pdf",
+    "page_num": 79,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_MCC_Form_Inputs_Pt_2.png",
+    "caption": "Figure: Creating a MCC – Form Inputs Pt 2"
+  },
+  "42aaba00-6c66-45ab-921d-6965bc695a57": {
+    "text": "Figure: Creating a MCC – Review and create Figure: Creating a MCC – Review and create",
+    "source": "singtel_document.pdf",
+    "page_num": 81,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Creating_a_MCC_Review_and_create.png",
+    "caption": "Figure: Creating a MCC – Review and create"
+  },
+  "bbfb85ae-8611-4d4d-a808-14f7d9b2a9df": {
+    "text": "Figure: MCC – Successful Creation Step 14: Review all the information and then proceed to click on Submit.\nFigure: MCC – Successful Creation\nStep 15: The cluster would appear on the dashboard and the state will be reflected as healthy if the\ncreation was successful.\n16.2.0 MCR (Multi-Cloud Container Registry)\nYou may manage container images with the Multi-cloud Container Registry (MCR), a private container\nregistry. In terms of image management, there are a few typical functions like pushing and pulling\nimages, but the main unique features are as follows:\nThe ability to easily set up a Registry Server.\n•\nNative integration with container clusters for Multi-cloud computing (MCC). This makes it\n•\npossible to use the images hosted within MCR to easily install applications on MCC.\nSecure and reliable picture management from several cloud providers.\n•",
+    "source": "singtel_document.pdf",
+    "page_num": 81,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MCC_Successful_Creation.png",
+    "caption": "Figure: MCC – Successful Creation"
+  },
+  "26dc6618-7afe-48ea-9531-741094339c1c": {
+    "text": "Figure: MCR – Creating a Multi-Cloud Container Registry 16.2.1 Creating a Multi-Cloud Container Registry (MCR)\nFigure: MCR – Creating a Multi-Cloud Container Registry",
+    "source": "singtel_document.pdf",
+    "page_num": 82,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MCR_Creating_a_Multi-Cloud_Container_Registry.png",
+    "caption": "Figure: MCR – Creating a Multi-Cloud Container Registry"
+  },
+  "b8a29908-7301-4349-a80f-6c70bf120cdb": {
+    "text": "Figure: MCR – Creating a Registry Step 1: To begin, navigate to the MCP section on the side menu, and click on MCR.\nThen, click on Create to proceed.\nFigure: MCR – Creating a Registry\nStep 2: Give your MCR a display name.\nChoose a Registry Size in Step Three.\n82 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 82,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MCR_Creating_a_Registry.png",
+    "caption": "Figure: MCR – Creating a Registry"
+  },
+  "c5c46bb6-bfb0-4bc2-9a95-22e90b4aa496": {
+    "text": "Figure: MCR – Creating Access for MCR Step 4: Please choose the MCC that you would like to link with this MCR if you already have one.\nStep 5: Go over the information and press Submit to create.\nUse the Registry URL to access your MCR after it has been created.\n16.2.2 Provisioning Access for Multi-Cloud Container Registry\nYou must first create an Access in order to obtain the login credentials you'll need to connect using\nyour CLI in order to access your MCR.\nFigure: MCR – Creating Access for MCR",
+    "source": "singtel_document.pdf",
+    "page_num": 83,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MCR_Creating_Access_for_MCR.png",
+    "caption": "Figure: MCR – Creating Access for MCR"
+  },
+  "e8c1363e-18ba-4c37-b11a-d43e58594997": {
+    "text": "Figure: MCR- Providing Access Credentials 1. Select MCP then MCR.\n2. Select the MCR for which you want to establish access.\nFigure: MCR- Providing Access Credentials\nClick Actions then Create access after selecting the Access tab.\n3. For this access, provide your username. Please be aware that the username you submit here\nmay not exactly match the one used to log into your MCR.\n83 | Singtel Proprietary and Confidential Information",
+    "source": "singtel_document.pdf",
+    "page_num": 83,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-MCR-_Providing_Access_Credentials.png",
+    "caption": "Figure: MCR- Providing Access Credentials"
+  },
+  "0ba637d1-2859-4b68-b4c5-e3c27ba99c62": {
+    "text": "Figure: Access - Generated user credentials 4. Enter the duration in days for which this access will expire. Or, for unrestricted access, type \"-\n1.\"\n5. Press Confirm.\nFigure: Access - Generated user credentials\nThe generated username and secret can be found on the Access tab after the access has been\ncreated.\nGlossary of Terms, Abbreviations and Acronyms\nTerm\nDefinition\nSSH\nSSH (Secure Shell) is a network protocol that provides a secure way to access and\nmanage remote devices or servers over a potentially unsecured network. It is\ncommonly used for secure remote administration and file transfers.\nNodes\nNode is a virtual machine that runs one or more service instances (instances of a\nspecific version of service code) on a cluster within a service mesh.\nVM\nA virtual machine (VM) is a software emulation of a physical computer. It allows\nmultiple operating systems to run on a single physical host computer, enabling",
+    "source": "singtel_document.pdf",
+    "page_num": 84,
+    "image_path": "documents/page_images\\singtel_document\\singtel_document-Access_-_Generated_user_credentials.png",
+    "caption": "Figure: Access - Generated user credentials"
+  }
+}

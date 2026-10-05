@@ -8,3 +8,4 @@ pymupdf
 google-generativeai==0.8.6
 fastapi==0.115.6
 uvicorn==0.34.0
+

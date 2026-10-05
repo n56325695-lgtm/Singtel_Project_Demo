@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singtel Platform Docs Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e60000;
+    --red-deep: #b30000;
+    --red-soft: #fff0f0;
+    --ink: #1b1b1f;
+    --ink-2: #3c3c44;
+    --muted: #6b6b76;
+    --line: #e7e7ec;
+    --bg: #f6f6f8;
+    --card: #fff;
+    --ok: #12a150;
+    --err: #c8102e;
+    --sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", Consolas, monospace;
+    --shadow: 0 1px 2px rgba(27,27,31,.05), 0 10px 28px rgba(27,27,31,.07);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--ink); display: flex; flex-direction: column; }
+
+  /* ---------- header ---------- */
+  header { background: #fff; border-bottom: 1px solid var(--line); position: relative; z-index: 5; }
+  header::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: linear-gradient(90deg, var(--red), #ff4d4d 60%, var(--red-deep)); }
+  .bar { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .wordmark { font-weight: 800; font-size: 25px; letter-spacing: -.04em; color: var(--red); display: flex; align-items: center; gap: 6px; line-height: 1; }
+  .wordmark i { width: 11px; height: 11px; border-radius: 50%; background: var(--red); display: inline-block; }
+  .brand img { height: 28px; display: none; }
+  .divider { width: 1px; height: 28px; background: var(--line); }
+  .product { line-height: 1.25; }
+  .product b { font-size: 14.5px; font-weight: 700; display: block; }
+  .product span { font-size: 12px; color: var(--muted); }
+  .right { display: flex; align-items: center; gap: 10px; }
+  #status { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: var(--muted); padding: 7px 12px; border: 1px solid var(--line); border-radius: 99px; background: #fff; }
+  #status .dot { width: 8px; height: 8px; border-radius: 50%; background: #b5b5bf; }
+  #status.ok { color: var(--ok); } #status.ok .dot { background: var(--ok); box-shadow: 0 0 0 4px rgba(18,161,80,.16); }
+  #status.down { color: var(--err); } #status.down .dot { background: var(--err); box-shadow: 0 0 0 4px rgba(200,16,46,.14); }
+  .ghost { font: 600 12.5px var(--sans); color: var(--ink-2); background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 8px 16px; cursor: pointer; transition: all .15s; }
+  .ghost:hover { color: var(--red); border-color: var(--red); background: var(--red-soft); }
+
+  /* ---------- chat area ---------- */
+  #log { flex: 1; overflow-y: auto; scroll-behavior: smooth; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 28px 24px 12px; display: flex; flex-direction: column; gap: 22px; min-height: 100%; }
+
+  #empty { display: flex; flex-direction: column; gap: 22px; }
+  .hero { background: linear-gradient(120deg, var(--red) 0%, #c40000 55%, #8f0000 100%); color: #fff; border-radius: 22px; padding: 34px 36px; position: relative; overflow: hidden; box-shadow: 0 18px 40px rgba(230,0,0,.25); }
+  .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.18); }
+  .hero::before { width: 320px; height: 320px; right: -80px; top: -120px; }
+  .hero::after { width: 200px; height: 200px; right: 40px; top: -30px; background: rgba(255,255,255,.06); }
+  .hero h1 { font-size: 30px; line-height: 1.15; letter-spacing: -.03em; font-weight: 800; margin: 0 0 12px; max-width: 18ch; position: relative; }
+  .hero p { font-size: 15px; line-height: 1.65; margin: 0; opacity: .92; max-width: 52ch; position: relative; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; gap: 12px; align-items: flex-start; }
+  .ico { flex: 0 0 38px; height: 38px; border-radius: 12px; background: var(--red-soft); display: grid; place-items: center; }
+  .ico svg { width: 19px; height: 19px; stroke: var(--red); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .step b { font-size: 13.5px; display: block; margin-bottom: 3px; }
+  .step span { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+  .sec-h { font-size: 13px; font-weight: 700; color: var(--ink-2); margin: 4px 0 -8px; }
+  .topics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .qcard { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; cursor: pointer; font: 700 14px/1.4 var(--sans); color: var(--ink); box-shadow: var(--shadow); transition: transform .15s, border-color .15s; }
+  .qcard:hover { transform: translateY(-3px); border-color: var(--red); }
+  .qcard small { display: block; font-weight: 500; font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .scope { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12.5px; color: var(--muted); }
+  .scope span.t { padding: 5px 12px; border-radius: 99px; background: #fff; border: 1px solid var(--line); font-weight: 600; color: var(--ink-2); }
+
+  .msg { display: flex; gap: 12px; width: 100%; }
+  .msg.user { flex-direction: row-reverse; }
+  .avatar { flex: 0 0 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 11.5px; font-weight: 800; }
+  .msg.bot .avatar { background: var(--red); color: #fff; }
+  .msg.user .avatar { background: var(--ink); color: #fff; }
+  .body { display: flex; flex-direction: column; gap: 12px; min-width: 0; max-width: calc(100% - 50px); }
+  .msg.user .body { align-items: flex-end; }
+  .bubble { padding: 15px 19px; border-radius: 18px; font-size: 14.5px; line-height: 1.72; }
+  .msg.user .bubble { background: var(--ink); color: #fff; border-top-right-radius: 5px; white-space: pre-wrap; }
+  .msg.bot .bubble { background: var(--card); border: 1px solid var(--line); border-top-left-radius: 5px; box-shadow: var(--shadow); }
+  .msg.bot .bubble.error { background: #fff5f6; border-color: #f3c3ca; color: var(--err); }
+  .bubble p { margin: 0 0 10px; } .bubble p:last-child { margin: 0; }
+  .bubble strong { color: var(--red-deep); font-weight: 700; }
+  .bubble ul, .bubble ol { margin: 4px 0 10px; padding-left: 22px; } .bubble li { margin-bottom: 7px; }
+  .bubble li::marker { color: var(--red); font-weight: 700; }
+  .bubble code { font-family: var(--mono); font-size: 12.5px; background: var(--bg); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px; }
+  .tools { display: flex; align-items: center; gap: 14px; }
+  .tool { font: 600 12px var(--sans); color: var(--muted); background: none; border: none; cursor: pointer; padding: 2px 0; display: inline-flex; align-items: center; gap: 5px; }
+  .tool:hover, .tool.on { color: var(--red); }
+  .tool svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .source { font-size: 11.5px; color: var(--muted); margin-left: auto; }
+
+  .typing { display: flex; gap: 5px; padding: 17px 19px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; border-top-left-radius: 5px; width: max-content; }
+  .typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--red); animation: bounce 1.1s infinite ease-in-out; }
+  .typing span:nth-child(2) { animation-delay: .15s; } .typing span:nth-child(3) { animation-delay: .3s; }
+  @keyframes bounce { 0%,60%,100% { opacity: .3; transform: none; } 30% { opacity: 1; transform: translateY(-4px); } }
+
+  .shots-label { font-size: 12px; font-weight: 700; color: var(--ink-2); margin-top: 14px; }
+  .results { display: flex; gap: 14px; overflow-x: auto; padding: 2px 2px 10px; }
+  .shot { flex: 0 0 auto; width: 310px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; cursor: zoom-in; box-shadow: var(--shadow); transition: transform .15s, border-color .15s; }
+  .shot:hover { transform: translateY(-3px); border-color: var(--red); }
+  .chrome { height: 26px; background: var(--bg); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 5px; padding: 0 11px; }
+  .chrome i { width: 8px; height: 8px; border-radius: 50%; background: #d4d4dc; } .chrome i:first-child { background: var(--red); }
+  .shot img { width: 100%; height: 195px; object-fit: contain; display: block; background: #fff; }
+  .shot .meta { padding: 12px 15px 14px; border-top: 1px solid var(--line); }
+  .shot .cap { font-size: 12.5px; font-weight: 600; line-height: 1.45; margin: 0 0 10px; }
+  .shot .cap.fb { font-weight: 500; color: var(--muted); }
+  .shot .sub { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; color: var(--muted); font-weight: 600; }
+  .pill { font-family: var(--mono); font-size: 11px; background: var(--red-soft); color: var(--red-deep); padding: 3px 9px; border-radius: 99px; }
+
+  /* ---------- composer ---------- */
+  form { background: linear-gradient(180deg, transparent, var(--bg) 35%); padding: 10px 24px 18px; }
+  .composer { max-width: 860px; margin: 0 auto; display: flex; gap: 10px; align-items: flex-end; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 8px 8px 8px 20px; box-shadow: var(--shadow); transition: border-color .15s, box-shadow .15s; }
+  .composer:focus-within { border-color: var(--red); box-shadow: 0 0 0 4px rgba(230,0,0,.1); }
+  textarea { flex: 1; resize: none; border: none; outline: none; background: transparent; font: 500 14.5px/1.5 var(--sans); color: var(--ink); height: 40px; padding: 9px 0; }
+  textarea::placeholder { color: #9d9da8; }
+  #send { height: 42px; padding: 0 20px; border: none; border-radius: 14px; background: var(--red); color: #fff; font: 700 13.5px var(--sans); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background .15s; }
+  #send:hover:not(:disabled) { background: var(--red-deep); }
+  #send:disabled { background: #d8d8df; cursor: not-allowed; }
+  #send svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .hint { max-width: 860px; margin: 9px auto 0; text-align: center; font-size: 11.5px; color: #9d9da8; }
+
+  #lightbox { display: none; position: fixed; inset: 0; background: rgba(20,20,24,.88); backdrop-filter: blur(4px); z-index: 50; align-items: center; justify-content: center; flex-direction: column; gap: 14px; padding: 32px; cursor: zoom-out; }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: min(94vw, 1150px); max-height: 80vh; border-radius: 12px; background: #fff; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+  #lightbox p { color: #fff; font-size: 13.5px; font-weight: 600; margin: 0; max-width: 70ch; text-align: center; }
+  #lightbox small { color: #b4b4c0; font-size: 12px; }
+
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { background: #d4d4dc; border-radius: 4px; }
+
+  @media (max-width: 760px) {
+    .steps, .topics { grid-template-columns: 1fr; }
+    .product, .divider { display: none; }
+    .hero { padding: 26px 22px; } .hero h1 { font-size: 24px; }
+    .bar, .wrap, form { padding-left: 14px; padding-right: 14px; }
+    .shot { width: 260px; }
+    #send span { display: none; } #send { padding: 0 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="brand">
+      <!-- Set LOGO_URL below to show the official Singtel logo instead of the text wordmark -->
+      <img id="logo" alt="Singtel">
+      <div class="wordmark" id="wordmark">singtel<i></i></div>
+      <div class="divider"></div>
+      <div class="product"><b>Platform Docs Assistant</b><span>Instant answers from the official documentation</span></div>
+    </div>
+    <div class="right">
+      <div id="status"><span class="dot"></span><span id="status-text">Checking connection</span></div>
+      <button class="ghost" id="clear" type="button">New chat</button>
+    </div>
+  </div>
+</header>
+
+<div id="log">
+  <div class="wrap" id="wrap">
+    <div id="empty">
+      <section class="hero">
+        <h1>Find any answer in the platform docs, fast.</h1>
+        <p>Ask in plain English. You get a clear answer from the Singtel platform documentation, plus the dashboard screenshot that shows exactly where to click.</p>
+      </section>
+
+      <div class="steps">
+        <div class="step"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><div><b>Ask your question</b><span>Type what you want to do or find.</span></div></div>
+        <div class="step"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h12a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z"/><path d="M8 9h7M8 13h5"/></svg></div><div><b>Read the answer</b><span>Short, step-by-step, taken from the docs.</span></div></div>
+        <div class="step"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div><div><b>See the screen</b><span>Open the matching screenshot full size.</span></div></div>
+      </div>
+
+      <div class="sec-h">Start with a common question</div>
+      <div class="topics">
+        <button class="qcard" data-q="How do I view notifications?">How do I view notifications?<small>Alerts and updates</small></button>
+        <button class="qcard" data-q="Where do I see Elastic IP usage?">Where do I see Elastic IP usage?<small>Resource limits</small></button>
+        <button class="qcard" data-q="How do I check a policy's request history?">How do I check a policy's request history?<small>Policies</small></button>
+      </div>
+      <div class="scope"><span>Covers:</span><span class="t">Dashboards</span><span class="t">Policies</span><span class="t">Notifications</span><span class="t">Resource limits</span></div>
+    </div>
+  </div>
+</div>
+
+<form id="form">
+  <div class="composer">
+    <textarea id="input" placeholder="Ask about the platform, e.g. How do I view notifications?" rows="1" aria-label="Your question"></textarea>
+    <button id="send" type="submit" aria-label="Send question"><span>Ask</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+  <div class="hint">Enter to send &nbsp;&middot;&nbsp; Shift + Enter for a new line</div>
+</form>
+
+<div id="lightbox"><img id="lb-img" src="" alt=""><p id="lb-cap"></p><small>Click anywhere or press Esc to close</small></div>
+
+<script>
+  const API_BASE = "";
+  const QUERY_URL = API_BASE + "/query";
+  const LOGO_URL = ""; // e.g. "/static/singtel-logo.svg"
+
+  const $ = id => document.getElementById(id);
+  const log = $("log"), wrap = $("wrap"), form = $("form"), input = $("input"), sendBtn = $("send");
+  const statusEl = $("status"), statusText = $("status-text");
+  const lightbox = $("lightbox"), lbImg = $("lb-img"), lbCap = $("lb-cap");
+  const emptyHTML = wrap.innerHTML;
+
+  if (LOGO_URL) { const l = $("logo"); l.src = LOGO_URL; l.style.display = "block"; $("wordmark").style.display = "none"; }
+
+  function closeLightbox() { lightbox.classList.remove("open"); lbImg.src = ""; }
+  lightbox.addEventListener("click", closeLightbox);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
+
+  async function checkStatus() {
+    try {
+      const res = await fetch(API_BASE + "/health");
+      if (!res.ok) throw new Error();
+      statusEl.className = "ok"; statusText.textContent = "Connected";
+    } catch {
+      statusEl.className = "down"; statusText.textContent = "Can't reach the server";
+    }
+  }
+  checkStatus();
+
+  const removeEmpty = () => { const e = $("empty"); if (e) e.remove(); };
+  const scrollDown = () => { log.scrollTop = log.scrollHeight; };
+  function escapeHtml(s) { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+  // Escapes HTML first, then applies a small set of safe markdown transforms.
+  function formatAnswer(raw) {
+    const esc = escapeHtml(raw)
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
+    return esc.split(/\n\s*\n/).map(block => {
+      const lines = block.split("\n").filter(l => l.trim());
+      if (!lines.length) return "";
+      if (lines.every(l => /^[-*]\s+/.test(l.trim())))
+        return "<ul>" + lines.map(l => `<li>${l.trim().replace(/^[-*]\s+/, "")}</li>`).join("") + "</ul>";
+      if (lines.every(l => /^\d+[.)]\s+/.test(l.trim())))
+        return "<ol>" + lines.map(l => `<li>${l.trim().replace(/^\d+[.)]\s+/, "")}</li>`).join("") + "</ol>";
+      return `<p>${lines.join("<br>")}</p>`;
+    }).join("");
+  }
+
+  function makeMsg(kind, label) {
+    const div = document.createElement("div");
+    div.className = "msg " + kind;
+    const av = document.createElement("div"); av.className = "avatar"; av.textContent = label;
+    const body = document.createElement("div"); body.className = "body";
+    div.append(av, body);
+    return { div, body };
+  }
+
+  function addUserMessage(text) {
+    removeEmpty();
+    const { div, body } = makeMsg("user", "You");
+    const b = document.createElement("div"); b.className = "bubble"; b.textContent = text;
+    body.appendChild(b); wrap.appendChild(div); scrollDown();
+  }
+
+  function addTypingIndicator() {
+    const { div, body } = makeMsg("bot", "S");
+    div.id = "typing-indicator";
+    body.innerHTML = '<div class="typing"><span></span><span></span><span></span></div>';
+    wrap.appendChild(div); scrollDown();
+  }
+
+  function openShot(img) {
+    lbImg.src = img.image_path;
+    lbImg.alt = img.caption || "Screenshot from the documentation";
+    lbCap.textContent = img.caption || "";
+    lightbox.classList.add("open");
+  }
+
+  const ICON_COPY = '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>';
+  const ICON_UP = '<svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM7 11l4-8a2 2 0 0 1 2 2v4h6a2 2 0 0 1 2 2l-1 7a2 2 0 0 1-2 2H7"/></svg>';
+  const ICON_DOWN = '<svg viewBox="0 0 24 24"><path d="M17 13V4h3v9zM17 13l-4 8a2 2 0 0 1-2-2v-4H5a2 2 0 0 1-2-2l1-7a2 2 0 0 1 2-2h11"/></svg>';
+
+  function toolBtn(html, onClick) {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "tool"; b.innerHTML = html; b.onclick = () => onClick(b);
+    return b;
+  }
+
+  function addBotMessage(answer, images, isError) {
+    const t = $("typing-indicator"); if (t) t.remove();
+    const { div, body } = makeMsg("bot", "S");
+
+    const bubble = document.createElement("div");
+    bubble.className = "bubble" + (isError ? " error" : "");
+    if (isError) bubble.textContent = answer; else bubble.innerHTML = formatAnswer(answer);
+    body.appendChild(bubble);
+
+    if (!isError) {
+      const tools = document.createElement("div"); tools.className = "tools";
+      tools.appendChild(toolBtn(ICON_COPY + "Copy", b => navigator.clipboard.writeText(answer).then(() => {
+        b.innerHTML = ICON_COPY + "Copied"; setTimeout(() => b.innerHTML = ICON_COPY + "Copy", 1500);
+      })));
+      const up = toolBtn(ICON_UP + "Helpful", b => { b.classList.add("on"); down.classList.remove("on"); });
+      const down = toolBtn(ICON_DOWN + "Not helpful", b => { b.classList.add("on"); up.classList.remove("on"); });
+      tools.append(up, down);
+      const src = document.createElement("span"); src.className = "source"; src.textContent = "Source: Singtel platform documentation";
+      tools.appendChild(src);
+      body.appendChild(tools);
+    }
+
+    if (Array.isArray(images) && images.length) {
+      const label = document.createElement("div");
+      label.className = "shots-label";
+      label.textContent = images.length === 1 ? "Related screenshot" : `Related screenshots (${images.length})`;
+      bubble.appendChild(label);
+
+      const row = document.createElement("div"); row.className = "results";
+      images.forEach(img => {
+        const card = document.createElement("div");
+        card.className = "shot"; card.tabIndex = 0; card.setAttribute("role", "button");
+        card.setAttribute("aria-label", "Open screenshot full size");
+        card.innerHTML = '<div class="chrome"><i></i><i></i><i></i></div>';
+
+        const im = document.createElement("img");
+        im.src = img.image_path; im.loading = "lazy";
+        im.alt = img.caption || "Screenshot from the documentation";
+        im.onerror = () => { im.style.display = "none"; };
+        card.appendChild(im);
+
+        const meta = document.createElement("div"); meta.className = "meta";
+        const cap = document.createElement("p");
+        cap.className = "cap" + (img.caption ? "" : " fb");
+        cap.textContent = img.caption || "Screenshot from the documentation";
+        meta.appendChild(cap);
+
+        const sub = document.createElement("div"); sub.className = "sub";
+        const page = document.createElement("span");
+        page.textContent = img.page_num != null ? `Page ${img.page_num}` : "";
+        sub.appendChild(page);
+        if (typeof img.score === "number") {
+          const pill = document.createElement("span");
+          pill.className = "pill"; pill.textContent = "Match " + img.score.toFixed(2);
+          sub.appendChild(pill);
+        }
+        meta.appendChild(sub); card.appendChild(meta);
+
+        card.addEventListener("click", () => openShot(img));
+        card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openShot(img); } });
+        row.appendChild(card);
+      });
+      bubble.appendChild(row);
+    }
+
+    wrap.appendChild(div); scrollDown();
+  }
+
+  async function sendQuery(query) {
+    addUserMessage(query);
+    addTypingIndicator();
+    sendBtn.disabled = true;
+    try {
+      const res = await fetch(QUERY_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query }),
+      });
+
+      let data = null;
+      try {
+        data = await res.json();
+      } catch {
+        data = null;
+      }
+
+      if (!res.ok) {
+        const message = data && (data.answer || data.detail)
+          ? (data.answer || data.detail)
+          : `Server responded ${res.status}`;
+        addBotMessage(message, [], true);
+        return;
+      }
+
+      addBotMessage(data.answer || "No answer came back for that. Try rewording your question.", data.images || []);
+    } catch (err) {
+      addBotMessage(`Couldn't reach the backend: ${err.message}. Check that the server is running, then try again.`, [], true);
+    } finally {
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text || sendBtn.disabled) return;
+    input.value = ""; input.style.height = "40px";
+    sendQuery(text);
+  });
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); }
+  });
+  input.addEventListener("input", () => {
+    input.style.height = "40px";
+    input.style.height = Math.min(input.scrollHeight, 140) + "px";
+  });
+
+  document.addEventListener("click", e => {
+    const el = e.target.closest("[data-q]");
+    if (!el || sendBtn.disabled) return;
+    input.value = el.dataset.q;
+    form.requestSubmit();
+  });
+
+  $("clear").addEventListener("click", () => { wrap.innerHTML = emptyHTML; log.scrollTop = 0; input.focus(); });
+</script>
+</body>
+</html>

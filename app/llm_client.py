@@ -6,8 +6,6 @@ from app.config import (
     GROQ_API_KEY,
     GROQ_MODEL,
 )
-
-
 # Initialize the official Groq SDK client
 groq_client = Groq(api_key=GROQ_API_KEY)
 
@@ -42,6 +40,25 @@ def embed_text(text: str) -> list[float]:
     )
     resp.raise_for_status()
     return resp.json()["embedding"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -18,6 +18,7 @@ def embed_query(query: str) -> list[float]:
     return response["embeddings"][0]
 
 
+
 # this is the step where i retrived the chunks from the qdrant vector db 
 def retrieve(query: str, top_k: int = TOP_K, min_score: float = SIMILARITY_THRESHOLD) -> list[dict]:
     """Embed the query and search Qdrant for the most similar chunks.

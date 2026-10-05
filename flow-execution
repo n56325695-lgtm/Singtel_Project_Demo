@@ -10,9 +10,6 @@ To stop the docker engine -->>> need to run the command --->>>
 
 
 
-
-
-
 flow-execution:-
 
 1. need to make the web chat ui attractive 
@@ -43,3 +40,26 @@ return text and image --> fig description -->it is actual part of expected chunk
 prompt should include an instruction to return fig description  for relevent question --> try 
 
 embedded markdown link --> instead of fig desciption need to try this approch as well.
+
+
+
+
+
+practice to do that then only the code will run in this enviorment .
+for linux environment -->> running command is -->>> 
+First activate the environment -->>...>>"source .venv/bin/activate"
+Running the project -->>>...>>"python -m uvicorn Dashboard.api:app --host 127.0.0.1 --port 8000"  this is the running command to setup in linux environment .
+
+
+
+
+
+steps keep in mind->>>
+1.llm model in actual senario is not the groq its a qwen/qwen model below 20b parameter.
+2.complete setup is like only one command is needed to run the code and the project
+is started working.
+
+
+
+
+

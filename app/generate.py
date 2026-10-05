@@ -5,37 +5,42 @@ from app.llm_client import call_llm
 
 
 # this is called system prompt
-PROMPT_TEMPLATE = """You are a helpful assistant for platform documentation. Answer the question using ONLY the context below as your source of truth.
+PROMPT_TEMPLATE = """You are a helpful assistant for the Singtel MEC Manager platform documentation. Answer the question using ONLY the context below as your source of truth.
 
 Context format
-Each block is labeled [Chunk N | Source: ...]. Some retrieved chunks may not actually be relevant to this question, even though they were retrieved — you must judge relevance yourself.
+Each block is labeled [Chunk N | Source: ...]. Some retrieved chunks may not be relevant to this question, even though they were retrieved. You must judge relevance yourself.
 
 How to answer
-- If the context describes relevant steps, screens, or information — even if not phrased exactly like the question — use it to give a clear, direct, complete answer.
-- If a procedure spans multiple chunks (e.g. steps 1-6 in one chunk, steps 7-12 in another), combine ALL of them into one complete answer. Never answer with only the first part of a multi-step procedure.
+- If the context describes relevant steps, screens, or information, even if not phrased exactly like the question, use it to give a clear, helpful answer.
+- If a procedure spans multiple chunks (e.g. steps 1-6 in one chunk, steps 7-12 in another), combine ALL of them into one complete answer, in order. Never answer with only the first part.
 - If the context is genuinely unrelated to the question, set used_context to false and give a brief, honest reply without inventing details.
-- Never invent steps, screens, fields, or details that are not present in the context.
+- Never invent steps, screens, fields, or details that are not in the context.
 
+Answer style (important)
+- Write in complete sentences, never a bare list of words. Start with a one-sentence direct answer to the question.
+- Then add the closely related details found in the SAME context that a user would need to act on the answer. Examples: what each value means, where in the UI to find it (menu path), the field or column name, caveats, warnings, prerequisites, limits, or what happens in edge cases.
+- Use only details present in the context. Do not pad with generic advice or repeat yourself.
+- For procedures, use a numbered list with one step per line. For lists of options or values, use bullets with a short explanation for each when the context provides one.
+- Use markdown (**bold** for UI labels and key terms). Inside the JSON string, write line breaks as \\n.
+- Typical length: 2-6 sentences for factual questions; as long as needed for procedures.
+
+Example of the expected style
+Question: What are the possible states of a transaction?
+Answer: "A transaction in the Transaction Logs can be in one of three states: **Complete**, **Failed**, or **In Progress**.\\n\\nThe state appears in the **State** column. While a transaction is still **In Progress**, its **Completed** timestamp is empty (null). To view the logs, go to **Services > Transaction Logs**."
 
 Figure descriptions
-Include figure_description whenever the answer is based on one or more figures. If multiple figures are used, join them in the ORDER THEY APPEAR IN THE DOCUMENT (i.e. by chunk/page order) — this is about narrative flow, not relevance.
+Include figure_description whenever the answer is based on one or more figures. If multiple figures are used, join them in the ORDER THEY APPEAR IN THE DOCUMENT (by chunk/page order). This is about narrative flow, not relevance.
 
-
-Ranking chunks (this controls which image is shown first to the user)
-
-relevant_chunk_indices must be ordered from MOST relevant to LEAST relevant to the question — the chunk that best and most directly answers the question comes first, regardless of where it sits in the context block. This ranking is separate from figure_description's document-order rule above: figure_description follows reading order, relevant_chunk_indices follows relevance.
-
-Only include a chunk index if you actually drew on that chunk's content to build the answer. Do not include chunks you skimmed but didn't use.
+Ranking chunks (controls which image is shown first)
+relevant_chunk_indices must be ordered from MOST relevant to LEAST relevant, regardless of where each chunk sits in the context. This is separate from figure_description's document-order rule. Only include a chunk index if you actually drew on that chunk's content.
 
 Context:
 {context}
 
 Question: {question}
 
-Respond with ONLY valid JSON in this exact shape, no other text, no markdown fences, no explanation outside the JSON:
-{{"used_context": true or false, "answer": "your complete, direct answer here", "figure_description": "figure description(s) in document order, or empty string if none", "relevant_chunk_indices": [chunk numbers ordered from most to least relevant, e.g. [2, 0, 3]]}}"""
-
-
+Respond with ONLY valid JSON in this exact shape, no other text, no markdown fences:
+{{"used_context": true or false, "answer": "your helpful, complete answer in markdown", "figure_description": "figure description(s) in document order, or empty string if none", "relevant_chunk_indices": [chunk numbers ordered from most to least relevant, e.g. [2, 0, 3]]}}"""
 
 
 
@@ -110,8 +115,20 @@ def generate_answer(question: str) -> dict:
     get their image/source attached to the response.
     """
 
-
-    chunks = retrieve(question)
+    try:
+        chunks = retrieve(question)
+    except Exception as exc:
+        return {
+            "question": question,
+            "answer": "The documentation service is temporarily unavailable. Please make sure the vector search service is running, then try again.",
+            "sources": [],
+            "figure_description": None,
+            "retrieved_chunks": [],
+            "image_path": None,
+            "image_paths": [],
+            "used_context": False,
+            "error": f"Documentation search unavailable: {type(exc).__name__}",
+        }
 
     if not chunks:
 
@@ -122,8 +139,21 @@ def generate_answer(question: str) -> dict:
     else:
         prompt = build_prompt(question, chunks)
 
+    try:
+        raw = call_llm(prompt)
+    except Exception as exc:
+        return {
+            "question": question,
+            "answer": "The AI answer service is temporarily unavailable. Please try again in a moment.",
+            "sources": [],
+            "figure_description": None,
+            "retrieved_chunks": [],
+            "image_path": None,
+            "image_paths": [],
+            "used_context": False,
+            "error": f"LLM service unavailable: {type(exc).__name__}",
+        }
 
-    raw = call_llm(prompt)
     answer, used_context, relevant_indices, figure_description = _parse_llm_json(raw)   # CHANGED: added figure_description
 
     top_image = None

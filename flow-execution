@@ -25,6 +25,7 @@ python -m app.ingest           # Phase 3 — only now touches Qdrant
 
 
 uvicorn Dashboard.api:app --reload  ---> running command for web-ui .
+python -m uvicorn Dashboard.api:app --reload  --->> now this
 
 
 

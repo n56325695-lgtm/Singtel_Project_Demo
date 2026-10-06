@@ -1,54 +1,33 @@
-
-# ************************this logic is correct and handle correctly********************************
-
 """
-INGEST LOGIC — matches the flow diagram exactly, no vision model involved.
+ingest.py  --  load Data/chunks.json (made by extract.py) into Qdrant.
 
-  Data/image_records.json (Phase 1 output)
-        |
-        v
-  Only records whose image file SURVIVED manual pruning are kept
-  (pruning deletes junk PNGs from the folder; we check disk, not a
-  vision-progress file, since there is no vision phase anymore)
-        |
-        v
-  Embed text = caption + extracted_text, per image, NO vision model
-        |
-        v
-  Index in Qdrant, payload per image:
-      image_path, page_num, extracted_text, caption, source
-        |
-        v
-  Same collection also holds text/markdown chunks (content_type
-  distinguishes the two at query time), exactly as before.
-
-Two bugs fixed from the previous version:
-  1. PROGRESS_FILE / vision_data no longer referenced — removed entirely,
-     since there is no vision-enrichment phase in this pipeline anymore.
-  2. RECORDS_FILE now matches the exact path the extraction script writes
-     to ("Data/image_records.json", capital D) — the previous version read
-     from "data/image_records.json" (lowercase), which is a guaranteed
-     FileNotFoundError on any case-sensitive filesystem (i.e. Linux/prod).
+Design (changed from the old version, on purpose):
+  * ONE point per text/table chunk. Screenshots are NOT separate points; each chunk
+    carries `image_paths`, so retrieving the steps returns their screenshots and the
+    same paragraph never comes back twice (once as text, once as image).
+  * The embedded text starts with the section path (persona > section > subsection > topic),
+    so "OS Images" under PCA and under MCA embed differently.
+  * Point ids are stable (uuid5 of the chunk id) -> re-running replaces, never duplicates.
+  * Manual pruning still works: image files you deleted from disk are dropped from image_paths.
 """
-
-import os
 import json
+import os
 import uuid
-
 import ollama
 from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, VectorParams, PointStruct
+from qdrant_client.models import Distance, PayloadSchemaType, PointStruct, VectorParams
 
 from app.config import (
     QDRANT_HOST, QDRANT_PORT, COLLECTION_NAME,
     EMBEDDING_MODEL, EMBEDDING_DIM,
-    CHUNK_SIZE, CHUNK_OVERLAP, DOCUMENTS_DIR
 )
 
 client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 
-# Must match exactly what app/extract_images.py writes to (see RECORDS_FILE there).
-RECORDS_FILE = os.path.join("Data", "image_records.json")
+CHUNKS_FILE = os.path.join("Data", "chunks.json")          # written by extract.py
+CHUNK_MAP_FILE = os.path.join("Evals", "chunks", "chunk_map.json")
+EMBED_BATCH = 32
+UPSERT_BATCH = 64
 
 
 def embed_texts(texts: list[str]) -> list[list[float]]:
@@ -56,132 +35,351 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
     return response["embeddings"]
 
 
-def create_collection():
-    client.recreate_collection(
+def embed_in_batches(texts: list[str]) -> list[list[float]]:
+    vectors = []
+    for start in range(0, len(texts), EMBED_BATCH):
+        vectors += embed_texts(texts[start:start + EMBED_BATCH])
+        print(f"  embedded {min(start + EMBED_BATCH, len(texts))}/{len(texts)}")
+    return vectors
+
+
+def create_collection() -> None:
+    """Full rebuild each run (same behaviour as the old recreate_collection, but
+    without the deprecated call)."""
+    if client.collection_exists(COLLECTION_NAME):
+        client.delete_collection(COLLECTION_NAME)
+    client.create_collection(
         collection_name=COLLECTION_NAME,
         vectors_config=VectorParams(size=EMBEDDING_DIM, distance=Distance.COSINE),
     )
+    # indexes make filtering by role / type fast: retrieve(..., persona="...")
+    for field in ("persona", "content_type", "source"):
+        client.create_payload_index(COLLECTION_NAME, field_name=field,
+                                    field_schema=PayloadSchemaType.KEYWORD)
 
 
-# --- text/markdown path stays exactly as before ---
-def chunk_text(text: str, max_chars: int = 500, min_chars: int = 50) -> list[str]:
-    paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
-    chunks, buffer = [], ""
-    for para in paragraphs:
-        if len(buffer) + len(para) < max_chars:
-            buffer += (" " if buffer else "") + para
-        else:
-            if len(buffer) >= min_chars:
-                chunks.append(buffer)
-                buffer = para
-            else:
-                buffer += " " + para
-                chunks.append(buffer)
-                buffer = ""
-    if buffer:
-        chunks.append(buffer)
+def load_chunks() -> list[dict]:
+    with open(CHUNKS_FILE, "r", encoding="utf-8") as f:
+        chunks = json.load(f)
+
+    pruned = 0
+    for c in chunks:
+        kept = [p for p in c["image_paths"] if os.path.exists(p)]   # manual pruning takes effect here
+        pruned += len(c["image_paths"]) - len(kept)
+        c["image_paths"] = kept
+    print(f"Loaded {len(chunks)} chunks ({pruned} image links dropped: file pruned from disk)")
     return chunks
 
 
-def load_text_documents(directory: str) -> list[dict]:
-    docs = []
-    for filename in os.listdir(directory):
-        if filename.endswith((".txt", ".md")):
-            with open(os.path.join(directory, filename), "r", encoding="utf-8") as f:
-                docs.append({"source": filename, "text": f.read()})
-    return docs
+def build_points(chunks: list[dict]) -> tuple[list[PointStruct], dict]:
+    longest = max(len(c["text"]) for c in chunks)
+    print(f"Longest chunk: {longest} chars (check it fits your embedding model's input limit)")
 
+    vectors = embed_in_batches([c["text"] for c in chunks])
 
-def build_text_chunk_points(directory: str) -> tuple[list[PointStruct], dict]:
-    docs = load_text_documents(directory)
     points, chunk_map = [], {}
-    for doc in docs:
-        chunks = chunk_text(doc["text"], max_chars=CHUNK_SIZE, min_chars=CHUNK_OVERLAP)
-        embeddings = embed_texts(chunks)
-        for chunk, embedding in zip(chunks, embeddings):
-            chunk_id = str(uuid.uuid4())
-            points.append(PointStruct(
-                id=chunk_id, vector=embedding,
-                payload={"content_type": "text_chunk", "text": chunk, "source": doc["source"]},
-            ))
-            chunk_map[chunk_id] = {"text": chunk, "source": doc["source"]}
+    for c, vector in zip(chunks, vectors):
+        point_id = str(uuid.uuid5(uuid.NAMESPACE_URL, c["id"]))
+        payload = {
+            "content_type": c["type"],                 # "text_chunk" | "table_chunk"
+            "text": c["text"],                         # section path + body (what the LLM will read)
+            "source": c["source"],
+            "persona": c["persona"],
+            "section_path": c["section_path"],
+            "pages": c["pages"],
+            "page_num": c["pages"][0] if c["pages"] else None,
+            "image_paths": c["image_paths"],
+            "image_path": c["image_paths"][0] if c["image_paths"] else None,   # old single-image key
+            "chunk_id": c["id"],
+            "table_title": c.get("table_title"),
+        }
+        points.append(PointStruct(id=point_id, vector=vector, payload=payload))
+        chunk_map[point_id] = {k: payload[k] for k in
+                               ("text", "source", "persona", "section_path", "pages", "image_paths", "content_type")}
     return points, chunk_map
 
 
-# --- image path: reads Phase 1 output only, no vision model ---
-def build_page_image_points() -> tuple[list[PointStruct], dict]:
-    with open(RECORDS_FILE, "r", encoding="utf-8") as f:
-        records = json.load(f)
-
-    # Only records whose image file is still on disk survive here — this is
-    # how "manually delete junk images" pruning takes effect. No vision
-    # progress file to check anymore.
-    ready = [r for r in records if os.path.exists(r["image_path"])]
-    skipped = len(records) - len(ready)
-    print(f"Building points for {len(ready)} images "
-          f"({skipped} skipped — pruned from disk)...")
-
-    texts = []
-    for r in ready:
-        combined = " ".join(filter(None, [r["caption"], r["extracted_text"]])).strip()
-        texts.append(combined if combined else " ")
-
-    embeddings = embed_texts(texts)
-
-    points, image_map = [], {}
-    for rec, embedding, text in zip(ready, embeddings, texts):
-        point_id = str(uuid.uuid4())
-
-        points.append(PointStruct(
-            id=point_id,
-            vector=embedding,
-            payload={
-                "content_type": "page_image",
-                "source": rec["source"],
-                "page_num": rec["page_num"],
-                "image_path": rec["image_path"],
-                "extracted_text": rec["extracted_text"],
-                "caption": rec["caption"],
-            },
-        ))
-        image_map[point_id] = {
-            "text": text,
-            "source": rec["source"],
-            "page_num": rec["page_num"],
-            "image_path": rec["image_path"],
-            "caption": rec["caption"],
-        }
-
-    return points, image_map
-
-
-def ingest():
+def ingest() -> None:
     print("Creating collection...")
     create_collection()
 
-    print("Loading text documents (.txt / .md)...")
-    text_points, chunk_map = build_text_chunk_points(DOCUMENTS_DIR)
+    print("Loading chunks...")
+    chunks = load_chunks()
 
-    print("Loading pruned images...")
-    page_points, image_map = build_page_image_points()
+    print("Embedding...")
+    points, chunk_map = build_points(chunks)
 
-    all_points = text_points + page_points
-    print(f"Uploading {len(all_points)} points to Qdrant "
-          f"({len(text_points)} text chunks, {len(page_points)} images)...")
-    client.upsert(collection_name=COLLECTION_NAME, points=all_points)
+    print(f"Uploading {len(points)} points to Qdrant...")
+    for start in range(0, len(points), UPSERT_BATCH):
+        client.upsert(collection_name=COLLECTION_NAME, points=points[start:start + UPSERT_BATCH])
 
-    combined_map = {**chunk_map, **image_map}
-    os.makedirs("Evals/chunks", exist_ok=True)
-    with open("Evals/chunks/chunk_map.json", "w", encoding="utf-8") as f:
-        json.dump(combined_map, f, ensure_ascii=False, indent=2)
+    os.makedirs(os.path.dirname(CHUNK_MAP_FILE), exist_ok=True)
+    with open(CHUNK_MAP_FILE, "w", encoding="utf-8") as f:
+        json.dump(chunk_map, f, ensure_ascii=False, indent=2)
 
-    print(f"Saved chunk_map.json with {len(combined_map)} entries "
-          f"({len(chunk_map)} text chunks, {len(image_map)} images)")
+    n_table = sum(c["type"] == "table_chunk" for c in chunks)
+    print(f"Saved {CHUNK_MAP_FILE} with {len(chunk_map)} entries "
+          f"({len(chunks) - n_table} text chunks, {n_table} table chunks)")
     print("Done.")
 
 
 if __name__ == "__main__":
     ingest()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# original code with old kb this code 
+# # ************************this logic is correct and handle correctly********************************
+
+# """
+# INGEST LOGIC — matches the flow diagram exactly, no vision model involved.
+
+#   Data/image_records.json (Phase 1 output)
+#         |
+#         v
+#   Only records whose image file SURVIVED manual pruning are kept
+#   (pruning deletes junk PNGs from the folder; we check disk, not a
+#   vision-progress file, since there is no vision phase anymore)
+#         |
+#         v
+#   Embed text = caption + extracted_text, per image, NO vision model
+#         |
+#         v
+#   Index in Qdrant, payload per image:
+#       image_path, page_num, extracted_text, caption, source
+#         |
+#         v
+#   Same collection also holds text/markdown chunks (content_type
+#   distinguishes the two at query time), exactly as before.
+
+# Two bugs fixed from the previous version:
+#   1. PROGRESS_FILE / vision_data no longer referenced — removed entirely,
+#      since there is no vision-enrichment phase in this pipeline anymore.
+#   2. RECORDS_FILE now matches the exact path the extraction script writes
+#      to ("Data/image_records.json", capital D) — the previous version read
+#      from "data/image_records.json" (lowercase), which is a guaranteed
+#      FileNotFoundError on any case-sensitive filesystem (i.e. Linux/prod).
+# """
+
+# import os
+# import json
+# import uuid
+
+# import ollama
+# from qdrant_client import QdrantClient
+# from qdrant_client.models import Distance, VectorParams, PointStruct
+
+# from app.config import (
+#     QDRANT_HOST, QDRANT_PORT, COLLECTION_NAME,
+#     EMBEDDING_MODEL, EMBEDDING_DIM,
+#     CHUNK_SIZE, CHUNK_OVERLAP, DOCUMENTS_DIR
+# )
+
+# client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
+
+# # Must match exactly what app/extract_images.py writes to (see RECORDS_FILE there).
+# RECORDS_FILE = os.path.join("Data", "image_records.json")
+
+
+# def embed_texts(texts: list[str]) -> list[list[float]]:
+#     response = ollama.embed(model=EMBEDDING_MODEL, input=texts)
+#     return response["embeddings"]
+
+
+# def create_collection():
+#     client.recreate_collection(
+#         collection_name=COLLECTION_NAME,
+#         vectors_config=VectorParams(size=EMBEDDING_DIM, distance=Distance.COSINE),
+#     )
+
+
+# # --- text/markdown path stays exactly as before ---
+# def chunk_text(text: str, max_chars: int = 500, min_chars: int = 50) -> list[str]:
+#     paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
+#     chunks, buffer = [], ""
+#     for para in paragraphs:
+#         if len(buffer) + len(para) < max_chars:
+#             buffer += (" " if buffer else "") + para
+#         else:
+#             if len(buffer) >= min_chars:
+#                 chunks.append(buffer)
+#                 buffer = para
+#             else:
+#                 buffer += " " + para
+#                 chunks.append(buffer)
+#                 buffer = ""
+#     if buffer:
+#         chunks.append(buffer)
+#     return chunks
+
+
+# def load_text_documents(directory: str) -> list[dict]:
+#     docs = []
+#     for filename in os.listdir(directory):
+#         if filename.endswith((".txt", ".md")):
+#             with open(os.path.join(directory, filename), "r", encoding="utf-8") as f:
+#                 docs.append({"source": filename, "text": f.read()})
+#     return docs
+
+
+# def build_text_chunk_points(directory: str) -> tuple[list[PointStruct], dict]:
+#     docs = load_text_documents(directory)
+#     points, chunk_map = [], {}
+#     for doc in docs:
+#         chunks = chunk_text(doc["text"], max_chars=CHUNK_SIZE, min_chars=CHUNK_OVERLAP)
+#         embeddings = embed_texts(chunks)
+#         for chunk, embedding in zip(chunks, embeddings):
+#             chunk_id = str(uuid.uuid4())
+#             points.append(PointStruct(
+#                 id=chunk_id, vector=embedding,
+#                 payload={"content_type": "text_chunk", "text": chunk, "source": doc["source"]},
+#             ))
+#             chunk_map[chunk_id] = {"text": chunk, "source": doc["source"]}
+#     return points, chunk_map
+
+
+# # --- image path: reads Phase 1 output only, no vision model ---
+# def build_page_image_points() -> tuple[list[PointStruct], dict]:
+#     with open(RECORDS_FILE, "r", encoding="utf-8") as f:
+#         records = json.load(f)
+
+#     # Only records whose image file is still on disk survive here — this is
+#     # how "manually delete junk images" pruning takes effect. No vision
+#     # progress file to check anymore.
+#     ready = [r for r in records if os.path.exists(r["image_path"])]
+#     skipped = len(records) - len(ready)
+#     print(f"Building points for {len(ready)} images "
+#           f"({skipped} skipped — pruned from disk)...")
+
+#     texts = []
+#     for r in ready:
+#         combined = " ".join(filter(None, [r["caption"], r["extracted_text"]])).strip()
+#         texts.append(combined if combined else " ")
+
+#     embeddings = embed_texts(texts)
+
+#     points, image_map = [], {}
+#     for rec, embedding, text in zip(ready, embeddings, texts):
+#         point_id = str(uuid.uuid4())
+
+#         points.append(PointStruct(
+#             id=point_id,
+#             vector=embedding,
+#             payload={
+#                 "content_type": "page_image",
+#                 "source": rec["source"],
+#                 "page_num": rec["page_num"],
+#                 "image_path": rec["image_path"],
+#                 "extracted_text": rec["extracted_text"],
+#                 "caption": rec["caption"],
+#             },
+#         ))
+#         image_map[point_id] = {
+#             "text": text,
+#             "source": rec["source"],
+#             "page_num": rec["page_num"],
+#             "image_path": rec["image_path"],
+#             "caption": rec["caption"],
+#         }
+
+#     return points, image_map
+
+
+# def ingest():
+#     print("Creating collection...")
+#     create_collection()
+
+#     print("Loading text documents (.txt / .md)...")
+#     text_points, chunk_map = build_text_chunk_points(DOCUMENTS_DIR)
+
+#     print("Loading pruned images...")
+#     page_points, image_map = build_page_image_points()
+
+#     all_points = text_points + page_points
+#     print(f"Uploading {len(all_points)} points to Qdrant "
+#           f"({len(text_points)} text chunks, {len(page_points)} images)...")
+#     client.upsert(collection_name=COLLECTION_NAME, points=all_points)
+
+#     combined_map = {**chunk_map, **image_map}
+#     os.makedirs("Evals/chunks", exist_ok=True)
+#     with open("Evals/chunks/chunk_map.json", "w", encoding="utf-8") as f:
+#         json.dump(combined_map, f, ensure_ascii=False, indent=2)
+
+#     print(f"Saved chunk_map.json with {len(combined_map)} entries "
+#           f"({len(chunk_map)} text chunks, {len(image_map)} images)")
+#     print("Done.")
+
+
+# if __name__ == "__main__":
+#     ingest()
 
 
 
